@@ -7,7 +7,7 @@
   <meta name="description" content="Taneet is the intelligent maritime operating system for modern vessel operators. Unify real-time fleet telemetry, automated STCW crew compliance, survey audits, and owner reporting.">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/taneet-logo.png">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -117,12 +117,21 @@
     
     <!-- HERO SECTION -->
     <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden bg-white">
-      <!-- Background Subtle Dot Grid -->
-      <div class="absolute inset-0 bg-dot-pattern opacity-60 pointer-events-none"></div>
+      <!-- Background Hero Image (bg-3.jpg) with Luminous White Overlay -->
+      <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <img 
+          src="assets/images/hero-bg.jpg" 
+          alt="Maritime Fleet Background" 
+          class="w-full h-full object-cover object-center opacity-30 scale-105 transition-transform duration-1000"
+        >
+        <!-- Luminous White Gradient Overlay for high-contrast legibility -->
+        <div class="absolute inset-0 bg-gradient-to-b from-white/85 via-white/75 to-white"></div>
+        <div class="absolute inset-0 bg-dot-pattern opacity-40"></div>
+      </div>
 
       <!-- Ambient Glow Blobs -->
-      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#28ada4]/10 rounded-full blur-[100px] pointer-events-none"></div>
-      <div class="absolute top-64 right-10 w-96 h-96 bg-[#7b0b76]/5 rounded-full blur-[90px] pointer-events-none"></div>
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#28ada4]/15 rounded-full blur-[100px] pointer-events-none"></div>
+      <div class="absolute top-64 right-10 w-96 h-96 bg-[#7b0b76]/8 rounded-full blur-[90px] pointer-events-none"></div>
 
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
