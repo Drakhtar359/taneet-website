@@ -172,10 +172,22 @@
 
       </div>
 
-      <!-- Organic Maritime Wave Divider seamlessly blending the hero image into the white section -->
-      <div class="absolute -bottom-px left-0 right-0 w-full overflow-hidden leading-none pointer-events-none z-10">
-        <svg viewBox="0 0 1440 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="relative block w-full h-12 sm:h-16 md:h-20 text-white" preserveAspectRatio="none">
-          <path d="M0,24 C320,80 680,10 1040,56 C1240,82 1380,44 1440,28 L1440,96 L0,96 Z" fill="currentColor"></path>
+      <!-- Animated Multi-Layered Maritime Wave Divider -->
+      <div class="wave-animation-wrapper">
+        <svg class="waves-animated-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+          <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+          <g class="wave-parallax">
+            <!-- Back Wave: subtle sea teal tint matching Taneet palette #28ada4 -->
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(40, 173, 164, 0.22)" />
+            <!-- Middle Wave: soft translucent foam -->
+            <use xlink:href="#gentle-wave" x="48" y="2" fill="rgba(255, 255, 255, 0.45)" />
+            <!-- Third Wave: bright white crest -->
+            <use xlink:href="#gentle-wave" x="48" y="4" fill="rgba(255, 255, 255, 0.8)" />
+            <!-- Front Wave: solid pure white sealing into the modules section -->
+            <use xlink:href="#gentle-wave" x="48" y="6" fill="#ffffff" />
+          </g>
         </svg>
       </div>
     </section>
