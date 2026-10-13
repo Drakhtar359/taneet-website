@@ -1,6 +1,6 @@
 /**
  * Taneet - Next-Gen Maritime Intelligence & Fleet Management
- * Interactive Controller (White Theme & Brand Colors #28ada4 / #7b0b76)
+ * Controller (Description & Showcase Platform)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -42,78 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         navbar.classList.add('bg-white/85');
       }
     }
-  });
-
-  // --- Interactive Product Simulator: Tabs ---
-  const tabButtons = document.querySelectorAll('.simulator-tab-btn');
-  const tabPanes = document.querySelectorAll('.simulator-tab-pane');
-
-  tabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetTab = btn.getAttribute('data-tab');
-
-      // Update button styles
-      tabButtons.forEach(b => {
-        b.classList.remove('bg-[#28ada4]', 'text-white', 'shadow-sm');
-        b.classList.add('text-slate-600', 'hover:text-slate-900', 'hover:bg-slate-100');
-      });
-      btn.classList.add('bg-[#28ada4]', 'text-white', 'shadow-sm');
-      btn.classList.remove('text-slate-600', 'hover:text-slate-900', 'hover:bg-slate-100');
-
-      // Update tab contents
-      tabPanes.forEach(pane => {
-        if (pane.id === `tab-${targetTab}`) {
-          pane.classList.remove('hidden');
-        } else {
-          pane.classList.add('hidden');
-        }
-      });
-
-      // Refresh icons
-      if (window.lucide) window.lucide.createIcons();
-    });
-  });
-
-  // --- Tab 1: Live Vessel Simulator Search & Filter ---
-  const vesselSearch = document.getElementById('vesselSearch');
-  const filterPills = document.querySelectorAll('.vessel-filter-pill');
-  const vesselItems = document.querySelectorAll('.vessel-row-item');
-
-  function filterVessels() {
-    const query = vesselSearch ? vesselSearch.value.toLowerCase().trim() : '';
-    const activePill = document.querySelector('.vessel-filter-pill.active');
-    const filterType = activePill ? activePill.getAttribute('data-status') : 'all';
-
-    vesselItems.forEach(item => {
-      const name = item.getAttribute('data-name')?.toLowerCase() || '';
-      const imo = item.getAttribute('data-imo')?.toLowerCase() || '';
-      const status = item.getAttribute('data-status') || '';
-
-      const matchesSearch = name.includes(query) || imo.includes(query);
-      const matchesFilter = filterType === 'all' || status === filterType;
-
-      if (matchesSearch && matchesFilter) {
-        item.style.display = '';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  }
-
-  if (vesselSearch) {
-    vesselSearch.addEventListener('input', filterVessels);
-  }
-
-  filterPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      filterPills.forEach(p => {
-        p.classList.remove('active', 'bg-[#28ada4]', 'text-white');
-        p.classList.add('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
-      });
-      pill.classList.add('active', 'bg-[#28ada4]', 'text-white');
-      pill.classList.remove('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
-      filterVessels();
-    });
   });
 
   // --- Dynamic ROI & Fleet Efficiency Calculator ---
@@ -187,78 +115,4 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
-
-  // --- Live Demo Request Modal ---
-  const demoModal = document.getElementById('demoModal');
-  const openDemoBtns = document.querySelectorAll('.open-demo-modal-btn');
-  const closeDemoBtn = document.getElementById('closeDemoBtn');
-  const demoForm = document.getElementById('demoForm');
-  const formStateDefault = document.getElementById('formStateDefault');
-  const formStateSuccess = document.getElementById('formStateSuccess');
-
-  function openModal() {
-    if (!demoModal) return;
-    demoModal.classList.remove('hidden');
-    demoModal.classList.add('flex');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal() {
-    if (!demoModal) return;
-    demoModal.classList.add('hidden');
-    demoModal.classList.remove('flex');
-    document.body.style.overflow = '';
-  }
-
-  openDemoBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openModal();
-    });
-  });
-
-  if (closeDemoBtn) {
-    closeDemoBtn.addEventListener('click', closeModal);
-  }
-
-  // Close on outside click
-  if (demoModal) {
-    demoModal.addEventListener('click', (e) => {
-      if (e.target === demoModal) {
-        closeModal();
-      }
-    });
-  }
-
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && demoModal && !demoModal.classList.contains('hidden')) {
-      closeModal();
-    }
-  });
-
-  // Handle Demo Form Submit
-  if (demoForm) {
-    demoForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const submitBtn = demoForm.querySelector('button[type="submit"]');
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = `
-          <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
-          </svg> Scheduling Consultation...
-        `;
-      }
-
-      setTimeout(() => {
-        if (formStateDefault && formStateSuccess) {
-          formStateDefault.classList.add('hidden');
-          formStateSuccess.classList.remove('hidden');
-          if (window.lucide) window.lucide.createIcons();
-        }
-      }, 600);
-    });
-  }
 });
