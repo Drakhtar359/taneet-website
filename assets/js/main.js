@@ -1,6 +1,6 @@
 /**
  * Taneet - Next-Gen Maritime Intelligence & Fleet Management
- * Interactive Controller
+ * Interactive Controller (White Theme & Brand Colors #28ada4 / #7b0b76)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,14 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Sticky Navigation Bar scroll effect ---
+  // --- Sticky Navigation Bar scroll shadow effect ---
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     if (navbar) {
-      if (window.scrollY > 40) {
-        navbar.classList.add('shadow-2xl', 'border-cyan-500/20');
+      if (window.scrollY > 20) {
+        navbar.classList.add('shadow-sm', 'border-slate-200/90', 'bg-white/95');
+        navbar.classList.remove('bg-white/85');
       } else {
-        navbar.classList.remove('shadow-2xl', 'border-cyan-500/20');
+        navbar.classList.remove('shadow-sm', 'border-slate-200/90', 'bg-white/95');
+        navbar.classList.add('bg-white/85');
       }
     }
   });
@@ -52,11 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Update button styles
       tabButtons.forEach(b => {
-        b.classList.remove('bg-cyan-500/20', 'text-cyan-400', 'border-cyan-500/40');
-        b.classList.add('text-slate-400', 'hover:text-slate-200', 'hover:bg-slate-800/60');
+        b.classList.remove('bg-[#28ada4]', 'text-white', 'shadow-sm');
+        b.classList.add('text-slate-600', 'hover:text-slate-900', 'hover:bg-slate-100');
       });
-      btn.classList.add('bg-cyan-500/20', 'text-cyan-400', 'border-cyan-500/40');
-      btn.classList.remove('text-slate-400', 'hover:text-slate-200', 'hover:bg-slate-800/60');
+      btn.classList.add('bg-[#28ada4]', 'text-white', 'shadow-sm');
+      btn.classList.remove('text-slate-600', 'hover:text-slate-900', 'hover:bg-slate-100');
 
       // Update tab contents
       tabPanes.forEach(pane => {
@@ -67,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Refresh icons if needed
+      // Refresh icons
       if (window.lucide) window.lucide.createIcons();
     });
   });
@@ -105,11 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
   filterPills.forEach(pill => {
     pill.addEventListener('click', () => {
       filterPills.forEach(p => {
-        p.classList.remove('active', 'bg-cyan-500', 'text-slate-950', 'font-semibold');
-        p.classList.add('bg-slate-800/80', 'text-slate-300');
+        p.classList.remove('active', 'bg-[#28ada4]', 'text-white');
+        p.classList.add('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
       });
-      pill.classList.add('active', 'bg-cyan-500', 'text-slate-950', 'font-semibold');
-      pill.classList.remove('bg-slate-800/80', 'text-slate-300');
+      pill.classList.add('active', 'bg-[#28ada4]', 'text-white');
+      pill.classList.remove('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
       filterVessels();
     });
   });
@@ -134,14 +136,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (crewValLabel) crewValLabel.textContent = `${crewCount} Seafarers`;
 
     // Calculations based on maritime benchmark studies:
-    // ~14 hours of compliance paperwork saved per vessel per month
     const hoursSavedMonth = Math.round(fleetCount * 14.5 + crewCount * 0.4);
-    
-    // Risk reduction based on automated certificate alerts
     const riskReduction = Math.min(99, Math.round(82 + (fleetCount > 20 ? 12 : 8)));
-    
-    // Average annual savings in USD ($4,200 per vessel in reduced port delays + admin overhead)
     const annualSavingsUSD = (fleetCount * 4400) + (crewCount * 180);
+    
     const formattedSavings = new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
@@ -247,21 +245,20 @@ document.addEventListener('DOMContentLoaded', () => {
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.innerHTML = `
-          <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-slate-950 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
           </svg> Scheduling Consultation...
         `;
       }
 
-      // Simulate network request
       setTimeout(() => {
         if (formStateDefault && formStateSuccess) {
           formStateDefault.classList.add('hidden');
           formStateSuccess.classList.remove('hidden');
           if (window.lucide) window.lucide.createIcons();
         }
-      }, 700);
+      }, 600);
     });
   }
 });

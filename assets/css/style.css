@@ -1,15 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
-  --primary-navy: #070c18;
-  --surface-card: #0e172a;
-  --surface-card-hover: #162444;
-  --accent-cyan: #06b6d4;
-  --accent-teal: #14b8a6;
-  --accent-indigo: #6366f1;
-  --accent-purple: #a855f7;
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(6, 182, 212, 0.4);
+  /* Taneet Brand System (matching app) */
+  --color-primary: #28ada4;
+  --color-primary-dark: #1e8f87;
+  --color-primary-light: #e6f7f6;
+  --color-secondary: #7b0b76;
+  --color-secondary-dark: #63085f;
+  --color-secondary-light: #fdf2fc;
+
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f1f5f9;
+  
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #94a3b8;
+
+  --border-light: #e2e8f0;
+  --border-hover: rgba(40, 173, 164, 0.45);
+
+  --shadow-teal-glow: 0 10px 25px -5px rgba(40, 173, 164, 0.25);
+  --shadow-purple-glow: 0 10px 25px -5px rgba(123, 11, 118, 0.20);
 }
 
 * {
@@ -17,125 +30,114 @@
   box-sizing: border-box;
 }
 
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.02em;
+}
+
 code, pre, .font-mono {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* Custom modern scrollbar */
+/* Custom modern scrollbar for clean white look */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #070c18;
+  background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #06b6d4;
+  background: #28ada4;
 }
 
-/* Ambient glow & mesh background utilities */
-.glow-cyan {
-  box-shadow: 0 0 35px -5px rgba(6, 182, 212, 0.35);
+/* Ambient Subtle Lighting */
+.bg-taneet-overlay {
+  background: 
+    radial-gradient(circle at 50% -10%, rgba(40, 173, 164, 0.08) 0%, transparent 55%),
+    radial-gradient(circle at 95% 80%, rgba(123, 11, 118, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 5% 45%, rgba(40, 173, 164, 0.04) 0%, transparent 40%);
 }
 
-.glow-purple {
-  box-shadow: 0 0 35px -5px rgba(168, 85, 247, 0.35);
+.bg-dot-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(15, 23, 42, 0.07) 1px, transparent 1px);
 }
 
-.glow-subtle {
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(255, 255, 255, 0.08);
+/* Brand Buttons */
+.btn-primary-teal {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-primary-teal:hover {
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--shadow-teal-glow);
+  transform: translateY(-1px);
 }
 
-.glow-card:hover {
-  box-shadow: 0 15px 35px -10px rgba(6, 182, 212, 0.15), 0 0 1px 1px rgba(6, 182, 212, 0.4);
+.btn-secondary-purple {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-secondary-purple:hover {
+  background-color: var(--color-secondary-dark);
+  box-shadow: var(--shadow-purple-glow);
+  transform: translateY(-1px);
 }
 
-.bg-radial-gradient {
-  background: radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.15) 0%, rgba(7, 12, 24, 0) 70%);
+/* Clean White Card Shadows & Transitions */
+.card-clean {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 2px 8px -2px rgba(15, 23, 42, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-clean:hover {
+  border-color: rgba(40, 173, 164, 0.45);
+  box-shadow: 0 12px 30px -10px rgba(40, 173, 164, 0.15), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
 }
 
-.bg-grid-pattern {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-}
-
-/* Glassmorphism */
-.glass-nav {
-  background: rgba(7, 12, 24, 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.glass-card {
-  background: rgba(14, 23, 42, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* Gradient text */
-.text-gradient {
-  background: linear-gradient(135deg, #ffffff 20%, #94a3b8 100%);
+/* Text Gradients */
+.text-gradient-taneet {
+  background: linear-gradient(135deg, #28ada4 0%, #1e8f87 50%, #7b0b76 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-cyan {
-  background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 50%, #14b8a6 100%);
+.text-gradient-purple {
+  background: linear-gradient(135deg, #7b0b76 0%, #a21caf 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-accent {
-  background: linear-gradient(135deg, #a855f7 0%, #6366f1 50%, #38bdf8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Button pulse animations */
-@keyframes pulse-subtle {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.85;
-    transform: scale(1.02);
-  }
-}
-
-.animate-pulse-subtle {
-  animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* Radar ping for vessel status */
-@keyframes radar-pulse {
+/* Radar pulse animation for active vessel status */
+@keyframes radar-pulse-teal {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    box-shadow: 0 0 0 0 rgba(40, 173, 164, 0.7);
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    box-shadow: 0 0 0 8px rgba(40, 173, 164, 0);
   }
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    box-shadow: 0 0 0 0 rgba(40, 173, 164, 0);
   }
 }
 
-.status-ping-active {
-  animation: radar-pulse 2s infinite;
+.status-ping-teal {
+  animation: radar-pulse-teal 2s infinite;
 }
 
-/* Custom range slider */
+/* Range slider styled with Taneet Teal */
 input[type=range] {
   -webkit-appearance: none;
   appearance: none;
@@ -145,7 +147,7 @@ input[type=range] {
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 8px;
-  background: #1e293b;
+  background: #e2e8f0;
   border-radius: 9999px;
   cursor: pointer;
 }
@@ -155,17 +157,17 @@ input[type=range]::-webkit-slider-thumb {
   height: 22px;
   width: 22px;
   border-radius: 50%;
-  background: #06b6d4;
+  background: #28ada4;
   cursor: pointer;
   margin-top: -7px;
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.8);
+  box-shadow: 0 2px 10px rgba(40, 173, 164, 0.4);
   border: 2px solid #ffffff;
   transition: transform 0.15s ease, background-color 0.15s ease;
 }
 
 input[type=range]::-webkit-slider-thumb:hover {
   transform: scale(1.15);
-  background: #38bdf8;
+  background: #1e8f87;
 }
 
 input[type=range]:focus {
