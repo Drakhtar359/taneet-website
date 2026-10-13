@@ -1,6 +1,6 @@
 /**
  * Taneet - Next-Gen Maritime Intelligence & Fleet Management
- * Controller (Description & Showcase Platform)
+ * Controller (Documentation, Certification & Digital Log Platform)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -43,47 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
-
-  // --- Dynamic ROI & Fleet Efficiency Calculator ---
-  const sliderFleet = document.getElementById('sliderFleet');
-  const sliderCrew = document.getElementById('sliderCrew');
-  const fleetValLabel = document.getElementById('fleetValLabel');
-  const crewValLabel = document.getElementById('crewValLabel');
-
-  const metricHoursSaved = document.getElementById('metricHoursSaved');
-  const metricRiskReduction = document.getElementById('metricRiskReduction');
-  const metricCostSavings = document.getElementById('metricCostSavings');
-
-  function calculateROI() {
-    if (!sliderFleet || !sliderCrew) return;
-
-    const fleetCount = parseInt(sliderFleet.value, 10);
-    const crewCount = parseInt(sliderCrew.value, 10);
-
-    if (fleetValLabel) fleetValLabel.textContent = `${fleetCount} Vessels`;
-    if (crewValLabel) crewValLabel.textContent = `${crewCount} Seafarers`;
-
-    // Calculations based on maritime benchmark studies:
-    const hoursSavedMonth = Math.round(fleetCount * 14.5 + crewCount * 0.4);
-    const riskReduction = Math.min(99, Math.round(82 + (fleetCount > 20 ? 12 : 8)));
-    const annualSavingsUSD = (fleetCount * 4400) + (crewCount * 180);
-    
-    const formattedSavings = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      maximumFractionDigits: 0
-    }).format(annualSavingsUSD);
-
-    if (metricHoursSaved) metricHoursSaved.textContent = `${hoursSavedMonth.toLocaleString()} hrs/mo`;
-    if (metricRiskReduction) metricRiskReduction.textContent = `${riskReduction}%`;
-    if (metricCostSavings) metricCostSavings.textContent = formattedSavings;
-  }
-
-  if (sliderFleet && sliderCrew) {
-    sliderFleet.addEventListener('input', calculateROI);
-    sliderCrew.addEventListener('input', calculateROI);
-    calculateROI();
-  }
 
   // --- FAQ Accordions ---
   const faqItems = document.querySelectorAll('.faq-item');
