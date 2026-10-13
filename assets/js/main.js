@@ -74,4 +74,49 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  // --- Cookie Consent Pop-up Banner ---
+  const cookieBanner = document.getElementById('cookieConsentBanner');
+  const acceptCookiesBtn = document.getElementById('acceptCookiesBtn');
+  const rejectCookiesBtn = document.getElementById('rejectCookiesBtn');
+  const closeCookieBtn = document.getElementById('closeCookieBanner');
+
+  function showCookieBanner() {
+    if (!cookieBanner) return;
+    cookieBanner.classList.remove('translate-y-12', 'opacity-0', 'pointer-events-none');
+    cookieBanner.classList.add('translate-y-0', 'opacity-100');
+  }
+
+  function hideCookieBanner() {
+    if (!cookieBanner) return;
+    cookieBanner.classList.remove('translate-y-0', 'opacity-100');
+    cookieBanner.classList.add('translate-y-12', 'opacity-0', 'pointer-events-none');
+  }
+
+  // Check if consent has already been recorded
+  const existingConsent = localStorage.getItem('taneet_cookies_consent');
+  if (!existingConsent) {
+    // Delay appearance slightly so page loads gracefully first
+    setTimeout(showCookieBanner, 700);
+  }
+
+  if (acceptCookiesBtn) {
+    acceptCookiesBtn.addEventListener('click', () => {
+      localStorage.setItem('taneet_cookies_consent', 'accepted_all');
+      hideCookieBanner();
+    });
+  }
+
+  if (rejectCookiesBtn) {
+    rejectCookiesBtn.addEventListener('click', () => {
+      localStorage.setItem('taneet_cookies_consent', 'essential_only');
+      hideCookieBanner();
+    });
+  }
+
+  if (closeCookieBtn) {
+    closeCookieBtn.addEventListener('click', () => {
+      hideCookieBanner();
+    });
+  }
 });
