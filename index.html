@@ -119,18 +119,19 @@
   <main class="flex-grow">
     
     <!-- HERO SECTION WITH VIVID HERO BACKGROUND PICTURE -->
-    <section class="relative pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden bg-slate-900">
+    <section class="relative pt-16 pb-28 lg:pt-24 lg:pb-36 overflow-hidden bg-white">
       
       <!-- Vivid Background Hero Image (bg-3.jpg) -->
       <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img 
           src="assets/images/hero-bg.jpg" 
           alt="Maritime Fleet Scenery" 
-          class="w-full h-full object-cover object-center opacity-85 scale-100"
+          class="w-full h-full object-cover object-center opacity-90 scale-100"
         >
-        <!-- Soft top & bottom gradient transition -->
-        <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/40"></div>
-        <div class="absolute inset-0 bg-slate-950/20"></div>
+        <!-- Top subtle tint and deep gradual bottom fade directly into white -->
+        <div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/70 via-white/30 to-transparent"></div>
+        <div class="absolute inset-x-0 bottom-0 h-48 sm:h-64 bg-gradient-to-t from-white via-white/80 via-white/40 to-transparent"></div>
+        <div class="absolute inset-0 bg-slate-950/15"></div>
       </div>
 
       <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -170,14 +171,22 @@
         </div>
 
       </div>
+
+      <!-- Organic Maritime Wave Divider seamlessly blending the hero image into the white section -->
+      <div class="absolute -bottom-px left-0 right-0 w-full overflow-hidden leading-none pointer-events-none z-10">
+        <svg viewBox="0 0 1440 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="relative block w-full h-12 sm:h-16 md:h-20 text-white" preserveAspectRatio="none">
+          <path d="M0,24 C320,80 680,10 1040,56 C1240,82 1380,44 1440,28 L1440,96 L0,96 Z" fill="currentColor"></path>
+        </svg>
+      </div>
     </section>
 
-    <!-- PLATFORM MODULES SECTION -->
-    <section id="modules" class="py-20 lg:py-28 bg-[#f8fafc] border-y border-slate-200">
+    <!-- PLATFORM MODULES SECTION (Seamless white flow with no hard separating line) -->
+    <section id="modules" class="pt-8 pb-20 lg:pb-28 bg-white border-b border-slate-100 relative z-10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-16">
           <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#1e8f87] bg-[#e6f7f6] px-3 py-1 rounded-full border border-[#28ada4]/30">
+
             Platform Modules
           </span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">
