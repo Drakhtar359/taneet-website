@@ -321,24 +321,6 @@ input[type=range]:focus {
 .radar-tick-180 { transform: rotate(180deg); }
 .radar-tick-270 { transform: rotate(270deg); }
 
-/* Sweeping Radar Phosphor Beam (Conic Gradient) */
-.radar-sweep-beam {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    rgba(40, 173, 164, 0.35) 0deg,
-    rgba(40, 173, 164, 0.12) 30deg,
-    rgba(40, 173, 164, 0.02) 60deg,
-    transparent 65deg,
-    transparent 360deg
-  );
-  animation: radar-sweep-rotation 4s linear infinite;
-  pointer-events: none;
-  z-index: 2;
-}
-
 /* Rotating Heading Favicon Disc */
 .radar-rotating-disc {
   position: relative;
@@ -388,15 +370,6 @@ input[type=range]:focus {
   pointer-events: none;
 }
 
-@keyframes radar-sweep-rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes radar-heading-rotate {
   from {
     transform: rotate(0deg);
@@ -422,7 +395,6 @@ input[type=range]:focus {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .radar-sweep-beam,
   .radar-rotating-disc,
   .radar-pulse-ring {
     animation: none;
