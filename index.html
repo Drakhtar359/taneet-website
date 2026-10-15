@@ -590,8 +590,8 @@
           <a href="https://app.mozuk.net" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base btn-primary-teal shadow-md flex items-center justify-center gap-2">
             Launch Platform Demo <i data-lucide="play-circle" class="w-4 h-4"></i>
           </a>
-          <a href="mailto:info@taneet.com" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-base text-slate-700 bg-white border border-slate-300 hover:border-[#28ada4] transition-all flex items-center justify-center gap-2 shadow-sm">
-            Contact Support & Inquiries
+          <a href="mailto:info@mozuk.net" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-base text-slate-700 bg-white border border-slate-300 hover:border-[#28ada4] transition-all flex items-center justify-center gap-2 shadow-sm">
+            <i data-lucide="mail" class="w-4 h-4 text-[#28ada4]"></i> Contact: info@mozuk.net
           </a>
         </div>
       </div>
@@ -603,60 +603,65 @@
   <footer class="bg-[#f8fafc] border-t border-slate-200 py-14 text-sm text-slate-600">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-200">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-200">
         
-        <!-- Col 1: Brand Info (Prominently scaled & readable logo) -->
-        <div class="space-y-4 md:col-span-1">
+        <!-- Col 1: Brand & Contact Info -->
+        <div class="space-y-4">
           <div class="flex items-center">
-            <img 
-              src="assets/images/taneet-logo.png" 
-              alt="Taneet Maritime Logo" 
-              class="h-9 sm:h-10 w-auto max-w-[210px] object-contain"
-            >
+            <a href="#" title="Taneet Maritime Operating System">
+              <img 
+                src="assets/images/taneet-logo.png" 
+                alt="Taneet Maritime Logo" 
+                class="h-9 sm:h-10 w-auto max-w-[210px] object-contain"
+              >
+            </a>
           </div>
-          <p class="text-xs text-slate-500 leading-relaxed mt-2">
+          <p class="text-xs text-slate-500 leading-relaxed">
             Centralized maritime operating platform for technical and non-technical document management, crew certifications, digital log books, and fleet records.
           </p>
-          <div class="flex items-center gap-3 text-slate-500 pt-1">
-            <a href="#" aria-label="Marine GitHub" class="hover:text-[#28ada4] transition-colors"><i data-lucide="github" class="w-4 h-4"></i></a>
-            <a href="#" aria-label="LinkedIn" class="hover:text-[#28ada4] transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-            <a href="mailto:info@taneet.com" aria-label="Global Support" class="hover:text-[#28ada4] transition-colors"><i data-lucide="mail" class="w-4 h-4"></i></a>
+          <div class="space-y-2 pt-1 text-xs">
+            <a href="mailto:info@mozuk.net" class="flex items-center gap-2 text-slate-700 hover:text-[#28ada4] font-semibold transition-colors">
+              <i data-lucide="mail" class="w-4 h-4 text-[#28ada4]"></i> info@mozuk.net
+            </a>
+            <a href="https://marine.mozuk.net" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-slate-600 hover:text-[#28ada4] transition-colors">
+              <i data-lucide="globe" class="w-4 h-4 text-[#28ada4]"></i> marine.mozuk.net
+            </a>
           </div>
         </div>
 
-        <!-- Col 2: Platform Links -->
+        <!-- Col 2: Platform Modules (matching page modules) -->
         <div class="space-y-3">
-          <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900">Platform</h4>
+          <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900">Platform Modules</h4>
           <ul class="space-y-2 text-xs">
-            <li><a href="#modules" class="hover:text-[#28ada4] transition-colors">Technical Documents</a></li>
-            <li><a href="#modules" class="hover:text-[#28ada4] transition-colors">Non-Technical Records</a></li>
-            <li><a href="#modules" class="hover:text-[#28ada4] transition-colors">Crew Documentation</a></li>
-            <li><a href="#modules" class="hover:text-[#28ada4] transition-colors">Digital Log Book</a></li>
-            <li><a href="#modules" class="hover:text-[#28ada4] transition-colors">External Tracking</a></li>
+            <li><a href="#modules" class="hover:text-[#28ada4] transition-colors flex items-center gap-1.5"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-[#28ada4]"></i> Module 01: Vessel Certificates</a></li>
+            <li><a href="#modules" class="hover:text-[#28ada4] transition-colors flex items-center gap-1.5"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-[#7b0b76]"></i> Module 02: Crew Documentation</a></li>
+            <li><a href="#modules" class="hover:text-[#28ada4] transition-colors flex items-center gap-1.5"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-[#28ada4]"></i> Module 03: Digital Ship Log Book</a></li>
+            <li><a href="#modules" class="hover:text-[#28ada4] transition-colors flex items-center gap-1.5"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-[#7b0b76]"></i> Module 04: External Vessel Tracking</a></li>
+            <li><a href="#features" class="hover:text-[#28ada4] transition-colors flex items-center gap-1.5"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-[#28ada4]"></i> Core Capabilities Matrix</a></li>
           </ul>
         </div>
 
-        <!-- Col 3: Maritime Industry -->
+        <!-- Col 3: Page Navigation (matching page sections) -->
         <div class="space-y-3">
-          <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900">Industries</h4>
+          <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900">Page Navigation</h4>
           <ul class="space-y-2 text-xs">
-            <li><a href="#" class="hover:text-[#28ada4] transition-colors">Commercial Bulk & Tankers</a></li>
-            <li><a href="#" class="hover:text-[#28ada4] transition-colors">Offshore Support & Tug Fleet</a></li>
-            <li><a href="#" class="hover:text-[#28ada4] transition-colors">Crewing & Manning Agencies</a></li>
-            <li><a href="#" class="hover:text-[#28ada4] transition-colors">Technical Ship Management</a></li>
-            <li><a href="#" class="hover:text-[#28ada4] transition-colors">Vessel Owners & Operators</a></li>
+            <li><a href="#" class="hover:text-[#28ada4] transition-colors">Home & Overview</a></li>
+            <li><a href="#modules" class="hover:text-[#28ada4] transition-colors">Taneet Core Modules</a></li>
+            <li><a href="#features" class="hover:text-[#28ada4] transition-colors">Document & Fleet Capabilities</a></li>
+            <li><a href="#comparison" class="hover:text-[#28ada4] transition-colors">Why Fleets Choose Taneet</a></li>
+            <li><a href="#faq" class="hover:text-[#28ada4] transition-colors">Frequently Asked Questions</a></li>
+            <li><a href="#contact" class="hover:text-[#28ada4] transition-colors">Contact & Support</a></li>
           </ul>
         </div>
 
-        <!-- Col 4: Compliance & Legal -->
+        <!-- Col 4: Platform Access & Mozuk Marine -->
         <div class="space-y-3">
-          <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900">Standards</h4>
+          <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900">Platform Access</h4>
           <ul class="space-y-2 text-xs">
-            <li><a href="#" class="hover:text-[#28ada4] transition-colors">STCW 2010 Compliance</a></li>
-            <li><a href="#" class="hover:text-[#28ada4] transition-colors">Statutory & Class Matrix</a></li>
-            <li><a href="#" class="hover:text-[#28ada4] transition-colors">Privacy & Data Governance</a></li>
-            <li><a href="#" class="hover:text-[#28ada4] transition-colors">Terms of Service</a></li>
-            <li><a href="#" class="hover:text-[#28ada4] transition-colors">Security & Access Control</a></li>
+            <li><a href="https://app.mozuk.net" target="_blank" rel="noopener noreferrer" class="hover:text-[#28ada4] transition-colors flex items-center gap-1.5"><i data-lucide="play-circle" class="w-3.5 h-3.5 text-[#28ada4]"></i> Launch Platform Demo</a></li>
+            <li><a href="https://app.mozuk.net" target="_blank" rel="noopener noreferrer" class="hover:text-[#28ada4] transition-colors flex items-center gap-1.5"><i data-lucide="log-in" class="w-3.5 h-3.5 text-[#7b0b76]"></i> Platform Log In</a></li>
+            <li><a href="https://marine.mozuk.net" target="_blank" rel="noopener noreferrer" class="hover:text-[#28ada4] transition-colors flex items-center gap-1.5"><i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-400"></i> Mozuk Marine Ecosystem</a></li>
+            <li><a href="mailto:info@mozuk.net" class="hover:text-[#28ada4] transition-colors flex items-center gap-1.5"><i data-lucide="mail" class="w-3.5 h-3.5 text-[#28ada4]"></i> Direct Inquiry: info@mozuk.net</a></li>
           </ul>
         </div>
 
@@ -664,7 +669,7 @@
 
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
         <p>&copy; 2026 Taneet - by <a href="https://marine.mozuk.net" target="_blank" rel="noopener noreferrer" class="hover:text-[#28ada4] font-semibold underline decoration-[#28ada4]/40 underline-offset-2 transition-colors">Mozuk Marine</a>. All rights reserved.</p>
-        <p class="font-mono text-slate-400">Teal #28ADA4 &bull; Purple #7B0B76 &bull; Marine Precision</p>
+        <p class="text-slate-500">Contact: <a href="mailto:info@mozuk.net" class="hover:text-[#28ada4] transition-colors font-semibold">info@mozuk.net</a></p>
       </div>
 
     </div>
