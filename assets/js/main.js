@@ -58,24 +58,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cycle === 'yearly') {
       billingYearlyBtn.className = 'px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-200 bg-white text-slate-900 shadow-sm flex items-center gap-2';
       billingMonthlyBtn.className = 'px-5 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 text-slate-600 hover:text-slate-900';
-      if (litePriceValue) litePriceValue.textContent = '$85';
+      if (litePriceValue) litePriceValue.textContent = '$85*';
       if (litePriceSubtext) {
-        litePriceSubtext.innerHTML = 'Paid yearly <span class="text-slate-400">($99/mo if paid monthly)</span>';
+        litePriceSubtext.innerHTML = '<span class="block">Paid yearly</span><span class="block text-slate-400">$99/mo if paid monthly</span>';
       }
-      if (fullPriceValue) fullPriceValue.textContent = '$165';
+      if (fullPriceValue) fullPriceValue.textContent = '$165*';
       if (fullPriceSubtext) {
-        fullPriceSubtext.innerHTML = 'Paid yearly <span class="text-slate-400">($189/mo if paid monthly)</span>';
+        fullPriceSubtext.innerHTML = '<span class="block">Paid yearly</span><span class="block text-slate-400">$189/mo if paid monthly</span>';
       }
     } else {
       billingMonthlyBtn.className = 'px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-200 bg-white text-slate-900 shadow-sm';
       billingYearlyBtn.className = 'px-5 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 text-slate-600 hover:text-slate-900 flex items-center gap-2';
-      if (litePriceValue) litePriceValue.textContent = '$99';
+      if (litePriceValue) litePriceValue.textContent = '$99*';
       if (litePriceSubtext) {
-        litePriceSubtext.innerHTML = 'Paid monthly <span class="text-[#1e8f87]">($85/mo if paid yearly)</span>';
+        litePriceSubtext.innerHTML = '<span class="block">Paid monthly</span><span class="block text-[#1e8f87]">$85/mo if paid yearly</span>';
       }
-      if (fullPriceValue) fullPriceValue.textContent = '$189';
+      if (fullPriceValue) fullPriceValue.textContent = '$189*';
       if (fullPriceSubtext) {
-        fullPriceSubtext.innerHTML = 'Paid monthly <span class="text-[#1e8f87]">($165/mo if paid yearly)</span>';
+        fullPriceSubtext.innerHTML = '<span class="block">Paid monthly</span><span class="block text-[#1e8f87]">$165/mo if paid yearly</span>';
       }
     }
   }
