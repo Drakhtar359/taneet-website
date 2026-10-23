@@ -115,8 +115,16 @@
 
       <!-- Coming Soon Heading & Subtitle -->
       <div class="space-y-4">
-        <h1 class="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight uppercase">
-          <span id="comingSailingWord" class="inline-block transition-all duration-500 ease-in-out">Coming</span> <span class="text-[#7b0b76]">Soon</span>
+        <h1 class="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight uppercase flex items-center justify-center gap-2.5 sm:gap-4">
+          <span class="relative inline-grid overflow-hidden h-[1.15em] leading-[1.15] text-right">
+            <span class="invisible select-none pointer-events-none col-start-1 row-start-1" aria-hidden="true">Sailing</span>
+            <span id="comingSailingTrack" class="col-start-1 row-start-1 flex flex-col will-change-transform" style="transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);">
+              <span class="h-[1.15em] leading-[1.15] block">Coming</span>
+              <span class="h-[1.15em] leading-[1.15] block">Sailing</span>
+              <span class="h-[1.15em] leading-[1.15] block" aria-hidden="true">Coming</span>
+            </span>
+          </span>
+          <span class="text-[#7b0b76] leading-[1.15]">Soon</span>
         </h1>
 
         <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
@@ -255,36 +263,30 @@
     </div>
   </footer>
 
-  <!-- Initialize Lucide Icons & Smooth COMING / SAILING Word Animation -->
+  <!-- Initialize Lucide Icons & Smooth Push-Up COMING / SAILING Animation -->
   <script>
     if (window.lucide) {
       lucide.createIcons();
     }
 
     (function () {
-      const wordEl = document.getElementById('comingSailingWord');
-      if (!wordEl) return;
-      let isSailing = false;
+      const track = document.getElementById('comingSailingTrack');
+      if (!track) return;
+      let step = 0;
 
       setInterval(() => {
-        wordEl.style.opacity = '0';
-        wordEl.style.transform = 'translateY(-10px)';
-        wordEl.style.filter = 'blur(4px)';
+        step += 1;
+        track.style.transition = 'transform 500ms cubic-bezier(0.22, 1, 0.36, 1)';
+        track.style.transform = `translateY(-${step * 33.3333}%)`;
 
-        setTimeout(() => {
-          isSailing = !isSailing;
-          wordEl.textContent = isSailing ? 'Sailing' : 'Coming';
-          wordEl.style.transform = 'translateY(10px)';
-
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              wordEl.style.opacity = '1';
-              wordEl.style.transform = 'translateY(0)';
-              wordEl.style.filter = 'blur(0px)';
-            });
-          });
-        }, 450);
-      }, 5000);
+        if (step === 2) {
+          setTimeout(() => {
+            track.style.transition = 'none';
+            step = 0;
+            track.style.transform = 'translateY(0%)';
+          }, 520);
+        }
+      }, 2000);
     })();
   </script>
 </body>
