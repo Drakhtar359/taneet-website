@@ -115,17 +115,12 @@
 
       <!-- Coming Soon Heading & Subtitle -->
       <div class="space-y-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#fdf2fc] border border-[#7b0b76]/20 text-[#7b0b76] text-xs font-bold uppercase tracking-wider">
-          <span class="w-2 h-2 rounded-full bg-[#7b0b76] animate-pulse"></span>
-          Client Portal &bull; BETA Rollout
-        </div>
-
         <h1 class="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight uppercase">
-          Coming <span class="text-[#7b0b76]">Soon</span>
+          <span id="comingSailingWord" class="inline-block transition-all duration-500 ease-in-out">Coming</span> <span class="text-[#7b0b76]">Soon</span>
         </h1>
 
         <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-          Our dedicated client login portal is currently being finalized for live fleet deployments. While we prepare public sign-in access, we are actively welcoming vessel operators and fleet managers into our <strong class="text-slate-900">Early BETA Onboarding Program</strong>.
+          Our dedicated client login portal is currently being finalized for live fleet deployments. While we prepare public sign-in access, we are actively welcoming vessel operators and fleet managers into our <strong class="text-slate-900 whitespace-nowrap">Early BETA Onboarding Program.</strong>
         </p>
       </div>
 
@@ -260,11 +255,37 @@
     </div>
   </footer>
 
-  <!-- Initialize Lucide Icons -->
+  <!-- Initialize Lucide Icons & Smooth COMING / SAILING Word Animation -->
   <script>
     if (window.lucide) {
       lucide.createIcons();
     }
+
+    (function () {
+      const wordEl = document.getElementById('comingSailingWord');
+      if (!wordEl) return;
+      let isSailing = false;
+
+      setInterval(() => {
+        wordEl.style.opacity = '0';
+        wordEl.style.transform = 'translateY(-10px)';
+        wordEl.style.filter = 'blur(4px)';
+
+        setTimeout(() => {
+          isSailing = !isSailing;
+          wordEl.textContent = isSailing ? 'Sailing' : 'Coming';
+          wordEl.style.transform = 'translateY(10px)';
+
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              wordEl.style.opacity = '1';
+              wordEl.style.transform = 'translateY(0)';
+              wordEl.style.filter = 'blur(0px)';
+            });
+          });
+        }, 450);
+      }, 5000);
+    })();
   </script>
 </body>
 </html>
