@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://marine.mozuk.net/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://marine.mozuk.net/assets/images/taneet-logo.png</image:loc>
+      <image:title>Taneet by Mozuk Marine Logo</image:title>
+      <image:caption>Taneet by Mozuk Marine - Centralized Maritime Document Management, Crew Certifications, Digital Log Book, and Spare Part Inventory Platform</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://marine.mozuk.net/assets/images/hero-bg.jpg</image:loc>
+      <image:title>Taneet Maritime Fleet Management Hero Background</image:title>
+      <image:caption>Commercial maritime cargo vessel sailing across the ocean representing Taneet fleet operations</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://marine.mozuk.net/assets/images/favicon.png</image:loc>
+      <image:title>Taneet Maritime Radar Heading Emblem</image:title>
+      <image:caption>Taneet Maritime Radar Heading Indicator Compass Icon</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://marine.mozuk.net/#modules</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://marine.mozuk.net/#features</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marine.mozuk.net/#comparison</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marine.mozuk.net/#pricing</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://marine.mozuk.net/#faq</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://marine.mozuk.net/#contact</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
