@@ -539,3 +539,405 @@ input[type=range]:focus {
   }
 }
 
+/* ==========================================================================
+   Mobile & Touch Device Revamp (Strictly Scoped — Zero Changes to Desktop)
+   ========================================================================== */
+
+/* 1. Disable ALL hover animations, lifts & color shifts on touch/mobile devices */
+@media (hover: none), (pointer: coarse), (max-width: 767px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn-primary-teal:hover {
+    background-color: var(--color-primary) !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  .btn-secondary-purple:hover {
+    background-color: var(--color-secondary) !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  .card-clean:hover {
+    border-color: var(--border-light) !important;
+    box-shadow: 0 2px 8px -2px rgba(15, 23, 42, 0.05) !important;
+    transform: none !important;
+  }
+
+  /* Keep Best Value pricing card border teal on mobile without hover jump */
+  #pricing .card-clean.border-\[\#28ada4\]:hover {
+    border-color: #28ada4 !important;
+  }
+
+  /* Disable Feature Card icon animations & hover box shifts on mobile/touch */
+  .group:hover .icon-anim-lock svg,
+  .group:hover .icon-anim-globe svg,
+  .group:hover .icon-anim-users svg,
+  .group:hover .icon-anim-dashboard svg,
+  .group:hover .icon-anim-bell svg,
+  .group:hover .icon-anim-shield svg {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  #features .card-clean .icon-anim-lock,
+  #features .card-clean .icon-anim-users,
+  #features .card-clean .icon-anim-bell {
+    background-color: #e6f7f6 !important;
+    color: #28ada4 !important;
+    border-color: rgba(40, 173, 164, 0.3) !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  #features .card-clean .icon-anim-globe,
+  #features .card-clean .icon-anim-dashboard,
+  #features .card-clean .icon-anim-shield {
+    background-color: #fdf2fc !important;
+    color: #7b0b76 !important;
+    border-color: rgba(123, 11, 118, 0.3) !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  #features .card-clean h3 {
+    color: #0f172a !important;
+  }
+
+  /* Disable logo & social icon scale on tap */
+  header a.group:hover img,
+  footer a.group:hover svg {
+    transform: none !important;
+  }
+}
+
+/* 2. Mobile Layout, Overflow Prevention & Component Refinements (< 768px) */
+@media (max-width: 767px) {
+  html,
+  body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+
+  /* Prevent any whitespace-nowrap text inside headings/paragraphs from overflowing mobile screens */
+  main h1 .whitespace-nowrap,
+  main p .whitespace-nowrap,
+  main strong.whitespace-nowrap {
+    white-space: normal !important;
+  }
+
+  /* Top Banner mobile sizing */
+  body > div:first-of-type {
+    font-size: 11px !important;
+    line-height: 1.45 !important;
+    padding: 0.5rem 0.75rem !important;
+  }
+
+  /* Header mobile fit across all pages (index, login, 404, terms, privacy) */
+  header > div:first-of-type {
+    height: 4.25rem !important;
+    padding-left: 0.875rem !important;
+    padding-right: 0.875rem !important;
+    gap: 0.5rem !important;
+  }
+
+  header a img {
+    max-width: 142px !important;
+    height: 2rem !important;
+  }
+
+  header > div:first-of-type > div.flex.items-center.gap-3 {
+    gap: 0.375rem !important;
+  }
+
+  header > div:first-of-type > div.flex.items-center.gap-3 > a {
+    padding: 0.45rem 0.75rem !important;
+    font-size: 0.75rem !important;
+    border-radius: 0.65rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* Hero section mobile fit */
+  main > section:first-of-type {
+    padding-top: 2rem !important;
+    padding-bottom: 4.5rem !important;
+  }
+
+  main > section:first-of-type > div.relative.z-10 > div {
+    padding: 1.5rem 1.15rem !important;
+    border-radius: 1.35rem !important;
+  }
+
+  main > section:first-of-type h1 {
+    font-size: 1.65rem !important;
+    line-height: 1.24 !important;
+    word-break: break-word !important;
+  }
+
+  main > section:first-of-type p {
+    font-size: 0.9rem !important;
+    line-height: 1.58 !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Taneet Core Modules (#modules): Static, always-readable cards on mobile with NO hover animation */
+  #modules {
+    padding-top: 1.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  #modules > div > div.text-center {
+    margin-bottom: 2.25rem !important;
+  }
+
+  #modules .continuous-corners-lg {
+    border-radius: 20px !important;
+    gap: 12px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  #modules .continuous-corners-lg > div.group {
+    height: auto !important;
+    min-height: 330px !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    cursor: default !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    box-shadow: 0 4px 14px -2px rgba(15, 23, 42, 0.12) !important;
+  }
+
+  #modules .module-card-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.25) 0%,
+      rgba(15, 23, 42, 0.78) 38%,
+      rgba(15, 23, 42, 0.93) 100%
+    ) !important;
+    transition: none !important;
+  }
+
+  /* Top-Right MODULE 01-04 badge on mobile */
+  #modules .continuous-corners-lg > div.group > div.pointer-events-none {
+    top: 1rem !important;
+    right: 1.15rem !important;
+  }
+
+  #modules .continuous-corners-lg > div.group > div.pointer-events-none > span:first-child {
+    font-size: 9px !important;
+  }
+
+  #modules .continuous-corners-lg > div.group > div.pointer-events-none > span:last-child {
+    font-size: 2.75rem !important;
+  }
+
+  /* Bottom content inside each module card on mobile */
+  #modules .continuous-corners-lg > div.group > div.inset-x-0.bottom-0 {
+    position: relative !important;
+    padding: 5.25rem 1.25rem 1.35rem 1.25rem !important;
+  }
+
+  #modules .module-expand-grid {
+    grid-template-rows: 1fr !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+
+  #modules .module-expand-text,
+  #modules .module-expand-list {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  #modules .module-expand-text {
+    font-size: 0.8125rem !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Core Features (#features) mobile spacing */
+  #features {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  #features > div.text-center {
+    margin-bottom: 2.25rem !important;
+  }
+
+  #features h2,
+  #comparison h2,
+  #pricing h2,
+  #faq h2,
+  #contact h2 {
+    font-size: 1.75rem !important;
+    line-height: 1.24 !important;
+  }
+
+  #features > div.grid {
+    gap: 1.15rem !important;
+  }
+
+  #features .card-clean {
+    padding: 1.35rem !important;
+    border-radius: 20px !important;
+  }
+
+  /* Comparison Table (#comparison): Stacked mobile cards so nothing overflows horizontally */
+  #comparison {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  #comparison > div.text-center {
+    margin-bottom: 2rem !important;
+  }
+
+  #comparison .overflow-x-auto {
+    overflow-x: visible !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  #comparison table,
+  #comparison tbody,
+  #comparison tr,
+  #comparison td {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  #comparison thead {
+    display: none !important;
+  }
+
+  #comparison tbody {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
+  #comparison tbody tr {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 1rem !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 8px -2px rgba(15, 23, 42, 0.05) !important;
+  }
+
+  #comparison tbody td {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.8125rem !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+  #comparison tbody td:first-child {
+    background: #f8fafc !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    font-size: 0.9rem !important;
+    padding: 0.85rem 1rem !important;
+  }
+
+  #comparison tbody td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.65rem;
+    font-family: 'Montserrat', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+  }
+
+  #comparison tbody td:last-child[data-label]::before {
+    color: #1e8f87;
+  }
+
+  /* Pricing Section (#pricing) mobile refinements */
+  #pricing {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  #pricing div[role="group"] {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #pricing #billingYearlyBtn,
+  #pricing #billingMonthlyBtn {
+    flex: 1 1 50% !important;
+    justify-content: center !important;
+    padding: 0.6rem 0.5rem !important;
+    font-size: 0.72rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* FAQ & Contact Section mobile spacing */
+  #faq,
+  #contact {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .faq-trigger {
+    padding: 0.9rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  .faq-content {
+    padding: 0.75rem 1rem 1rem 1rem !important;
+    font-size: 0.8125rem !important;
+  }
+
+  /* Cookie Consent Banner mobile placement */
+  #cookieConsentBanner {
+    left: 0.75rem !important;
+    right: 0.75rem !important;
+    bottom: 0.75rem !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  /* Login / Coming Soon Page mobile fit */
+  #comingSailingTrack,
+  #comingSailingTrack span {
+    line-height: 1.15 !important;
+  }
+
+  main h1.uppercase.flex {
+    font-size: 2rem !important;
+    gap: 0.45rem !important;
+    flex-wrap: nowrap !important;
+  }
+
+  /* Footer mobile spacing */
+  footer {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  footer > div > div.grid {
+    gap: 1.75rem !important;
+    padding-bottom: 1.75rem !important;
+  }
+
+  footer > div > div.pt-6 {
+    text-align: center !important;
+  }
+}
+
+
