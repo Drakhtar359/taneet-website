@@ -114,6 +114,63 @@ code, pre, .font-mono {
   corner-shape: squircle;
   -webkit-corner-shape: continuous;
 }
+
+/* Silky-Smooth Module Card Hover Reveal */
+.module-card-overlay {
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 550ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .module-card-overlay,
+.group:focus .module-card-overlay {
+  background-color: rgba(0, 0, 0, 0.76);
+}
+
+.module-expand-grid {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 450ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: grid-template-rows, opacity;
+}
+
+.group:hover .module-expand-grid,
+.group:focus .module-expand-grid {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.module-expand-inner {
+  overflow: hidden;
+}
+
+.module-expand-text {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+  transition:
+    opacity 500ms cubic-bezier(0.22, 1, 0.36, 1) 40ms,
+    transform 550ms cubic-bezier(0.22, 1, 0.36, 1) 40ms;
+  will-change: transform, opacity;
+}
+
+.module-expand-list {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  transition:
+    opacity 500ms cubic-bezier(0.22, 1, 0.36, 1) 100ms,
+    transform 550ms cubic-bezier(0.22, 1, 0.36, 1) 100ms;
+  will-change: transform, opacity;
+}
+
+.group:hover .module-expand-text,
+.group:focus .module-expand-text,
+.group:hover .module-expand-list,
+.group:focus .module-expand-list {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
 .card-clean:hover {
   border-color: rgba(40, 173, 164, 0.45);
   box-shadow: 0 12px 30px -10px rgba(40, 173, 164, 0.15), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
