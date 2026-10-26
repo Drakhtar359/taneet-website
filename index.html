@@ -206,115 +206,187 @@
           </p>
         </div>
 
-        <!-- 4 Modules Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- 4 Modules Grid (Split / Horizontal Sidebar Cards) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           <!-- Module 1: Document Management (Technical & Non-Technical) -->
-          <div class="bg-white rounded-2xl p-8 border border-slate-200 card-clean space-y-4">
-            <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-xl bg-[#e6f7f6] text-[#28ada4] border border-[#28ada4]/30 flex items-center justify-center">
-                <i data-lucide="file-text" class="w-6 h-6"></i>
+          <div class="flex flex-col sm:flex-row rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-xl hover:border-[#28ada4]/50 transition-all duration-300 group">
+            <!-- Colored Left Sidebar -->
+            <div class="sm:w-36 shrink-0 bg-gradient-to-br from-[#28ada4] to-[#1e8f87] text-white p-6 flex sm:flex-col items-center justify-between sm:justify-center gap-4 relative overflow-hidden">
+              <span class="absolute -bottom-3 -right-2 text-6xl font-black text-white/10 select-none pointer-events-none leading-none">01</span>
+              <div class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-300 relative z-10">
+                <i data-lucide="file-text" class="w-7 h-7 text-white"></i>
               </div>
-              <span class="text-xs font-mono font-bold text-[#1e8f87] uppercase bg-[#e6f7f6] px-2.5 py-1 rounded">Module 01</span>
+              <span class="text-[11px] font-mono font-extrabold uppercase tracking-wider bg-white/20 border border-white/25 px-3 py-1 rounded-full relative z-10 whitespace-nowrap">
+                Module 01
+              </span>
             </div>
-            <h3 class="text-xl font-bold text-slate-900">
-              Technical & Non-Technical Certificates
-            </h3>
-            <p class="text-slate-600 text-sm leading-relaxed">
-              Maintains an indexed digital archive for all vessel documentation. Covers technical certificates (classification surveys, statutory certificates, machinery manuals, safety equipment) as well as non-technical documents (commercial insurance, charter documents, and flag state registry records).
-            </p>
-            <ul class="text-xs text-slate-600 space-y-2 pt-2 border-t border-slate-100">
-              <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#28ada4]"></i> Digital repository for statutory certificates (SEC, Load Line, IOPP, ISM/ISPS)
-              </li>
-              <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#28ada4]"></i> Non-technical documents: P&I insurance, charter party docs, and commercial records
-              </li>
-              <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#28ada4]"></i> Proactive 90, 60, and 30-day alerts before any certificate expires
-              </li>
-            </ul>
+            <!-- Right Content Area -->
+            <div class="flex-1 p-7 sm:p-8 flex flex-col justify-between space-y-4">
+              <div class="space-y-2.5">
+                <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-[#1e8f87] transition-colors">
+                  Technical &amp; Non-Technical Certificates
+                </h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  Maintains an indexed digital archive for all vessel documentation. Covers technical certificates (classification surveys, statutory certificates, machinery manuals, safety equipment) as well as non-technical documents (commercial insurance, charter documents, and flag state registry records).
+                </p>
+              </div>
+              <ul class="text-xs text-slate-600 space-y-2.5 pt-4 border-t border-slate-100">
+                <li class="flex items-start gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-[#e6f7f6] text-[#28ada4] flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-3 h-3"></i>
+                  </span>
+                  <span>Digital repository for statutory certificates (SEC, Load Line, IOPP, ISM/ISPS)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-[#e6f7f6] text-[#28ada4] flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-3 h-3"></i>
+                  </span>
+                  <span>Non-technical documents: P&amp;I insurance, charter party docs, and commercial records</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-[#e6f7f6] text-[#28ada4] flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-3 h-3"></i>
+                  </span>
+                  <span>Proactive 90, 60, and 30-day alerts before any certificate expires</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <!-- Module 2: Crew Documentation & Verification -->
-          <div class="bg-white rounded-2xl p-8 border border-slate-200 card-clean space-y-4">
-            <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-xl bg-[#fdf2fc] text-[#7b0b76] border border-[#7b0b76]/30 flex items-center justify-center">
-                <i data-lucide="users" class="w-6 h-6"></i>
+          <div class="flex flex-col sm:flex-row rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-xl hover:border-[#7b0b76]/40 transition-all duration-300 group">
+            <!-- Colored Left Sidebar -->
+            <div class="sm:w-36 shrink-0 bg-gradient-to-br from-[#7b0b76] to-[#5a0756] text-white p-6 flex sm:flex-col items-center justify-between sm:justify-center gap-4 relative overflow-hidden">
+              <span class="absolute -bottom-3 -right-2 text-6xl font-black text-white/10 select-none pointer-events-none leading-none">02</span>
+              <div class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-300 relative z-10">
+                <i data-lucide="users" class="w-7 h-7 text-white"></i>
               </div>
-              <span class="text-xs font-mono font-bold text-[#7b0b76] uppercase bg-[#fdf2fc] px-2.5 py-1 rounded">Module 02</span>
+              <span class="text-[11px] font-mono font-extrabold uppercase tracking-wider bg-white/20 border border-white/25 px-3 py-1 rounded-full relative z-10 whitespace-nowrap">
+                Module 02
+              </span>
             </div>
-            <h3 class="text-xl font-bold text-slate-900">
-              Crew Documentation & Certification
-            </h3>
-            <p class="text-slate-600 text-sm leading-relaxed">
-              Provides complete tracking for all seafarers onboard and in reserve. Stores and monitors Certificates of Competency (CoC), STCW endorsements, national seaman books, passports, medical fitness certificates, and contract start/end dates.
-            </p>
-            <ul class="text-xs text-slate-600 space-y-2 pt-2 border-t border-slate-100">
-              <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#7b0b76]"></i> Rank-specific documentation hierarchy (Master, Chief Engineer, Officers, Deck Ratings)
-              </li>
-              <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#7b0b76]"></i> Continuous tracking of seafarer medical validity, visas, and passport dates
-              </li>
-              <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#7b0b76]"></i> Instant crew list generation with Port State Control compliance verification
-              </li>
-            </ul>
+            <!-- Right Content Area -->
+            <div class="flex-1 p-7 sm:p-8 flex flex-col justify-between space-y-4">
+              <div class="space-y-2.5">
+                <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-[#7b0b76] transition-colors">
+                  Crew Documentation &amp; Certification
+                </h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  Provides complete tracking for all seafarers onboard and in reserve. Stores and monitors Certificates of Competency (CoC), STCW endorsements, national seaman books, passports, medical fitness certificates, and contract start/end dates.
+                </p>
+              </div>
+              <ul class="text-xs text-slate-600 space-y-2.5 pt-4 border-t border-slate-100">
+                <li class="flex items-start gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-[#fdf2fc] text-[#7b0b76] flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-3 h-3"></i>
+                  </span>
+                  <span>Rank-specific documentation hierarchy (Master, Chief Engineer, Officers, Deck Ratings)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-[#fdf2fc] text-[#7b0b76] flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-3 h-3"></i>
+                  </span>
+                  <span>Continuous tracking of seafarer medical validity, visas, and passport dates</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-[#fdf2fc] text-[#7b0b76] flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-3 h-3"></i>
+                  </span>
+                  <span>Instant crew list generation with Port State Control compliance verification</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <!-- Module 3: Digital Log Book -->
-          <div class="bg-white rounded-2xl p-8 border border-slate-200 card-clean space-y-4">
-            <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-xl bg-[#e6f7f6] text-[#28ada4] border border-[#28ada4]/30 flex items-center justify-center">
-                <i data-lucide="book-open" class="w-6 h-6"></i>
+          <div class="flex flex-col sm:flex-row rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-xl hover:border-[#28ada4]/50 transition-all duration-300 group">
+            <!-- Colored Left Sidebar -->
+            <div class="sm:w-36 shrink-0 bg-gradient-to-br from-[#28ada4] to-[#1e8f87] text-white p-6 flex sm:flex-col items-center justify-between sm:justify-center gap-4 relative overflow-hidden">
+              <span class="absolute -bottom-3 -right-2 text-6xl font-black text-white/10 select-none pointer-events-none leading-none">03</span>
+              <div class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-300 relative z-10">
+                <i data-lucide="book-open" class="w-7 h-7 text-white"></i>
               </div>
-              <span class="text-xs font-mono font-bold text-[#1e8f87] uppercase bg-[#e6f7f6] px-2.5 py-1 rounded">Module 03</span>
+              <span class="text-[11px] font-mono font-extrabold uppercase tracking-wider bg-white/20 border border-white/25 px-3 py-1 rounded-full relative z-10 whitespace-nowrap">
+                Module 03
+              </span>
             </div>
-            <h3 class="text-xl font-bold text-slate-900">
-              Digital Ship Log Book
-            </h3>
-            <p class="text-slate-600 text-sm leading-relaxed">
-              Modernizes traditional paper log entries into a secure, searchable electronic log book. Records deck operations, engine milestones, maintenance entries, bunkering logs, and official ship events with time stamps and author attribution.
-            </p>
-            <ul class="text-xs text-slate-600 space-y-2 pt-2 border-t border-slate-100">
-              <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#28ada4]"></i> Structured electronic entries for deck, engine room, and safety events
-              </li>
-              <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#28ada4]"></i> Inspection-ready digital log history accessible for audits and superintendent reviews
-              </li>
-              <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#28ada4]"></i> Reduced transcription errors and streamlined ship-to-shore reporting
-              </li>
-            </ul>
+            <!-- Right Content Area -->
+            <div class="flex-1 p-7 sm:p-8 flex flex-col justify-between space-y-4">
+              <div class="space-y-2.5">
+                <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-[#1e8f87] transition-colors">
+                  Digital Ship Log Book
+                </h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  Modernizes traditional paper log entries into a secure, searchable electronic log book. Records deck operations, engine milestones, maintenance entries, bunkering logs, and official ship events with time stamps and author attribution.
+                </p>
+              </div>
+              <ul class="text-xs text-slate-600 space-y-2.5 pt-4 border-t border-slate-100">
+                <li class="flex items-start gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-[#e6f7f6] text-[#28ada4] flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-3 h-3"></i>
+                  </span>
+                  <span>Structured electronic entries for deck, engine room, and safety events</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-[#e6f7f6] text-[#28ada4] flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-3 h-3"></i>
+                  </span>
+                  <span>Inspection-ready digital log history accessible for audits and superintendent reviews</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-[#e6f7f6] text-[#28ada4] flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-3 h-3"></i>
+                  </span>
+                  <span>Reduced transcription errors and streamlined ship-to-shore reporting</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <!-- Module 4: Spare Part Inventory Tracking -->
-          <div class="bg-white rounded-2xl p-8 border border-slate-200 card-clean space-y-4">
-            <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-xl bg-[#fdf2fc] text-[#7b0b76] border border-[#7b0b76]/30 flex items-center justify-center">
-                <i data-lucide="package" class="w-6 h-6"></i>
+          <div class="flex flex-col sm:flex-row rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-xl hover:border-[#7b0b76]/40 transition-all duration-300 group">
+            <!-- Colored Left Sidebar -->
+            <div class="sm:w-36 shrink-0 bg-gradient-to-br from-[#7b0b76] to-[#5a0756] text-white p-6 flex sm:flex-col items-center justify-between sm:justify-center gap-4 relative overflow-hidden">
+              <span class="absolute -bottom-3 -right-2 text-6xl font-black text-white/10 select-none pointer-events-none leading-none">04</span>
+              <div class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-300 relative z-10">
+                <i data-lucide="package" class="w-7 h-7 text-white"></i>
               </div>
-              <span class="text-xs font-mono font-bold text-[#7b0b76] uppercase bg-[#fdf2fc] px-2.5 py-1 rounded">Module 04</span>
+              <span class="text-[11px] font-mono font-extrabold uppercase tracking-wider bg-white/20 border border-white/25 px-3 py-1 rounded-full relative z-10 whitespace-nowrap">
+                Module 04
+              </span>
             </div>
-            <h3 class="text-xl font-bold text-slate-900">
-              Spare Part Inventory Tracking
-            </h3>
-            <p class="text-slate-600 text-sm leading-relaxed">
-              Tracks all spare parts onboard across the vessel, whether technical components, ship replacement parts, or general equipment stores. Every item is systematically indexed with its exact onboard location, part number, and associated machinery for instant lookup and inventory control.
-            </p>
-            <ul class="text-xs text-slate-600 space-y-2 pt-2 border-t border-slate-100">
-              <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#7b0b76]"></i> Indexed onboard storage locations (store rooms, engine room, shelves, and lockers)
-              </li>
-              <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#7b0b76]"></i> Detailed tracking by spare part number, specifications, and available stock levels
-              </li>
-              <li class="flex items-center gap-2">
-                <i data-lucide="check" class="w-3.5 h-3.5 text-[#7b0b76]"></i> Direct mapping of spare parts to their designated shipboard machinery and systems
-              </li>
-            </ul>
+            <!-- Right Content Area -->
+            <div class="flex-1 p-7 sm:p-8 flex flex-col justify-between space-y-4">
+              <div class="space-y-2.5">
+                <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-[#7b0b76] transition-colors">
+                  Spare Part Inventory Tracking
+                </h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  Tracks all spare parts onboard across the vessel, whether technical components, ship replacement parts, or general equipment stores. Every item is systematically indexed with its exact onboard location, part number, and associated machinery for instant lookup and inventory control.
+                </p>
+              </div>
+              <ul class="text-xs text-slate-600 space-y-2.5 pt-4 border-t border-slate-100">
+                <li class="flex items-start gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-[#fdf2fc] text-[#7b0b76] flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-3 h-3"></i>
+                  </span>
+                  <span>Indexed onboard storage locations (store rooms, engine room, shelves, and lockers)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-[#fdf2fc] text-[#7b0b76] flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-3 h-3"></i>
+                  </span>
+                  <span>Detailed tracking by spare part number, specifications, and available stock levels</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="w-4 h-4 rounded-full bg-[#fdf2fc] text-[#7b0b76] flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-3 h-3"></i>
+                  </span>
+                  <span>Direct mapping of spare parts to their designated shipboard machinery and systems</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
         </div>
