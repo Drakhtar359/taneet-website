@@ -574,19 +574,19 @@ input[type=range]:focus {
 }
 
 .ios-notif-delay-1 {
-  animation-delay: 0.6s;
+  animation-delay: 1s;
 }
 
 .ios-notif-delay-2 {
-  animation-delay: 1.7s;
+  animation-delay: 2.5s;
 }
 
 .ios-notif-delay-3 {
-  animation-delay: 2.8s;
+  animation-delay: 4s;
 }
 
 .ios-notif-delay-4 {
-  animation-delay: 3.9s;
+  animation-delay: 5.5s;
 }
 
 @keyframes ios-notif-pop-in {
