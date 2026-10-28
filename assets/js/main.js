@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const notifStack = document.getElementById('heroNotificationsStack');
   if (notifStack) {
     const cards = Array.from(notifStack.querySelectorAll('.ios-notification'));
-    // Arrival order from oldest to newest: cards[3] at 1s, cards[2] at 2.5s, cards[1] at 4s, cards[0] at 5.5s
+    // Arrival order from oldest to newest: cards[3] at 1s, cards[2] at 3.5s, cards[1] at 6s, cards[0] at 8.5s (2.5s interval)
     const arrivalOrder = [3, 2, 1, 0];
-    const delays = [1000, 2500, 4000, 5500];
+    const delays = [1000, 3500, 6000, 8500];
     const timeLabels = ['now', '2m ago', '4m ago', '6m ago'];
 
     const placeCardAtSlot = (cardIndex, slotIndex, visible) => {
