@@ -9,6 +9,32 @@ document.addEventListener('DOMContentLoaded', () => {
     window.lucide.createIcons();
   }
 
+  // --- Hero iPhone Notifications Loop (1s, 2.5s, 4s, 5.5s -> Dismiss after 20s -> Restart) ---
+  const heroNotifications = document.querySelectorAll('.ios-notification');
+  if (heroNotifications.length > 0) {
+    const runNotificationLoop = () => {
+      setTimeout(() => {
+        // Smoothly fade out all notifications after 20 seconds
+        heroNotifications.forEach(notif => {
+          notif.classList.add('ios-notif-exit');
+        });
+
+        // Once fade-out completes, reset and restart the 1s, 2.5s, 4s, 5.5s sequence
+        setTimeout(() => {
+          heroNotifications.forEach(notif => {
+            notif.classList.remove('ios-notif-exit');
+            notif.style.animation = 'none';
+            void notif.offsetWidth; // Force reflow to restart CSS keyframe & delays
+            notif.style.animation = '';
+          });
+          runNotificationLoop();
+        }, 850);
+      }, 20000);
+    };
+
+    runNotificationLoop();
+  }
+
   // --- Mobile Navigation Menu ---
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileNav = document.getElementById('mobileNav');
