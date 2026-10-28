@@ -554,8 +554,8 @@ input[type=range]:focus {
     0 14px 32px -6px rgba(15, 23, 42, 0.22),
     0 2px 6px -1px rgba(15, 23, 42, 0.08);
   opacity: 0;
-  transform: translate3d(0, 22px, 0) scale(0.94);
-  animation: ios-notif-pop-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform: translate3d(0, 28px, 0) scale(0.95);
+  animation: ios-notif-pop-in 1.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   will-change: transform, opacity;
 }
 
@@ -574,29 +574,25 @@ input[type=range]:focus {
 }
 
 .ios-notif-delay-1 {
-  animation-delay: 0.45s;
+  animation-delay: 0.6s;
 }
 
 .ios-notif-delay-2 {
-  animation-delay: 1.2s;
+  animation-delay: 1.7s;
 }
 
 .ios-notif-delay-3 {
-  animation-delay: 1.95s;
+  animation-delay: 2.8s;
 }
 
 .ios-notif-delay-4 {
-  animation-delay: 2.7s;
+  animation-delay: 3.9s;
 }
 
 @keyframes ios-notif-pop-in {
   0% {
     opacity: 0;
-    transform: translate3d(0, 22px, 0) scale(0.94);
-  }
-  70% {
-    opacity: 1;
-    transform: translate3d(0, -2px, 0) scale(1.01);
+    transform: translate3d(0, 28px, 0) scale(0.95);
   }
   100% {
     opacity: 1;
@@ -732,20 +728,15 @@ input[type=range]:focus {
     padding-bottom: 4.5rem !important;
   }
 
-  main > section:first-of-type .bg-white\/95 {
-    padding: 1.5rem 1.25rem !important;
-    border-radius: 1.35rem !important;
-  }
-
   main > section:first-of-type h1 {
-    font-size: 1.65rem !important;
-    line-height: 1.24 !important;
+    font-size: 1.75rem !important;
+    line-height: 1.22 !important;
     word-break: break-word !important;
   }
 
-  main > section:first-of-type .bg-white\/95 > p {
-    font-size: 0.9rem !important;
-    line-height: 1.58 !important;
+  main > section:first-of-type .lg\:col-span-7 > p {
+    font-size: 0.925rem !important;
+    line-height: 1.6 !important;
     margin-top: 1rem !important;
   }
 
