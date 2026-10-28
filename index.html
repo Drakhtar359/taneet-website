@@ -173,82 +173,98 @@
 
           </div>
 
-          <!-- Right Side: iPhone Push Notifications from TANEET (Appearing Sequentially After Page Load) -->
-          <div class="lg:col-span-5 flex flex-col justify-between gap-3.5 max-w-md mx-auto lg:max-w-none w-full" aria-label="Taneet Live Platform Notifications">
+          <!-- Right Side: iPhone Push Notifications from TANEET (New Notifications Push Down from Top) -->
+          <div id="heroNotificationsStack" class="lg:col-span-5 flex flex-col justify-start max-w-md mx-auto lg:max-w-none w-full min-h-[420px] sm:min-h-[436px]" aria-label="Taneet Live Platform Notifications">
             
-            <!-- iOS Notification 1: Vessel Certificate Alarm -->
-            <div class="ios-notification ios-notif-delay-1 p-3.5 sm:p-4 flex items-start gap-3.5 text-left">
-              <div class="ios-app-icon shrink-0">
-                <img src="assets/images/favicon.png" alt="Taneet App Icon" class="w-6 h-6 object-contain">
-              </div>
-              <div class="flex-1 min-w-0">
-                <div class="flex items-center justify-between gap-2 mb-1">
-                  <img src="assets/images/taneet-logo.png" alt="TANEET" class="h-3 w-auto object-contain">
-                  <span class="text-[11px] font-medium text-slate-400 shrink-0">now</span>
+            <!-- Slot 1 (Top of final stack — Arrives 4th at 5.5s, pushes previous 3 down) -->
+            <div class="ios-notif-slot" data-appear-delay="5500">
+              <div class="ios-notif-slot-inner">
+                <div class="ios-notification p-3.5 sm:p-4 flex items-start gap-3.5 text-left">
+                  <div class="ios-app-icon shrink-0">
+                    <img src="assets/images/favicon.png" alt="Taneet App Icon" class="w-6 h-6 object-contain">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between gap-2 mb-1">
+                      <img src="assets/images/taneet-logo.png" alt="TANEET" class="h-3 w-auto object-contain">
+                      <span class="text-[11px] font-medium text-slate-400 shrink-0">now</span>
+                    </div>
+                    <div class="text-xs sm:text-[13px] font-bold text-slate-900 leading-snug">
+                      Certificate Expiry Alarm &bull; 30 Days
+                    </div>
+                    <p class="text-[11px] sm:text-xs text-slate-600 leading-snug mt-0.5">
+                      <span class="font-semibold text-slate-800">M/V Ocean Star:</span> Safety Equipment Certificate (SEC) expires in 30 days. Renewal survey required.
+                    </p>
+                  </div>
                 </div>
-                <div class="text-xs sm:text-[13px] font-bold text-slate-900 leading-snug">
-                  Certificate Expiry Alarm &bull; 30 Days
-                </div>
-                <p class="text-[11px] sm:text-xs text-slate-600 leading-snug mt-0.5">
-                  <span class="font-semibold text-slate-800">M/V Ocean Star:</span> Safety Equipment Certificate (SEC) expires in 30 days. Renewal survey required.
-                </p>
-              </div>
-            </div>
-
-            <!-- iOS Notification 2: Crew Documentation Alarm -->
-            <div class="ios-notification ios-notif-delay-2 p-3.5 sm:p-4 flex items-start gap-3.5 text-left">
-              <div class="ios-app-icon shrink-0">
-                <img src="assets/images/favicon.png" alt="Taneet App Icon" class="w-6 h-6 object-contain">
-              </div>
-              <div class="flex-1 min-w-0">
-                <div class="flex items-center justify-between gap-2 mb-1">
-                  <img src="assets/images/taneet-logo.png" alt="TANEET" class="h-3 w-auto object-contain">
-                  <span class="text-[11px] font-medium text-slate-400 shrink-0">2m ago</span>
-                </div>
-                <div class="text-xs sm:text-[13px] font-bold text-slate-900 leading-snug">
-                  Crew Documentation Warning
-                </div>
-                <p class="text-[11px] sm:text-xs text-slate-600 leading-snug mt-0.5">
-                  Chief Engineer <span class="font-semibold text-slate-800">M. Kowalski’s</span> Medical Fitness &amp; STCW Endorsement expire in 14 days.
-                </p>
               </div>
             </div>
 
-            <!-- iOS Notification 3: Digital Ship Log Book Alarm -->
-            <div class="ios-notification ios-notif-delay-3 p-3.5 sm:p-4 flex items-start gap-3.5 text-left">
-              <div class="ios-app-icon shrink-0">
-                <img src="assets/images/favicon.png" alt="Taneet App Icon" class="w-6 h-6 object-contain">
-              </div>
-              <div class="flex-1 min-w-0">
-                <div class="flex items-center justify-between gap-2 mb-1">
-                  <img src="assets/images/taneet-logo.png" alt="TANEET" class="h-3 w-auto object-contain">
-                  <span class="text-[11px] font-medium text-slate-400 shrink-0">6m ago</span>
+            <!-- Slot 2 (2nd in final stack — Arrives 3rd at 4.0s, pushes previous 2 down) -->
+            <div class="ios-notif-slot" data-appear-delay="4000">
+              <div class="ios-notif-slot-inner">
+                <div class="ios-notification p-3.5 sm:p-4 flex items-start gap-3.5 text-left">
+                  <div class="ios-app-icon shrink-0">
+                    <img src="assets/images/favicon.png" alt="Taneet App Icon" class="w-6 h-6 object-contain">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between gap-2 mb-1">
+                      <img src="assets/images/taneet-logo.png" alt="TANEET" class="h-3 w-auto object-contain">
+                      <span class="text-[11px] font-medium text-slate-400 shrink-0">2m ago</span>
+                    </div>
+                    <div class="text-xs sm:text-[13px] font-bold text-slate-900 leading-snug">
+                      Crew Documentation Warning
+                    </div>
+                    <p class="text-[11px] sm:text-xs text-slate-600 leading-snug mt-0.5">
+                      Chief Engineer <span class="font-semibold text-slate-800">M. Kowalski’s</span> Medical Fitness &amp; STCW Endorsement expire in 14 days.
+                    </p>
+                  </div>
                 </div>
-                <div class="text-xs sm:text-[13px] font-bold text-slate-900 leading-snug">
-                  Digital Ship Log Book Sign-Off
-                </div>
-                <p class="text-[11px] sm:text-xs text-slate-600 leading-snug mt-0.5">
-                  Daily Deck &amp; Engine Room log entries awaiting Master’s signature before port arrival.
-                </p>
               </div>
             </div>
 
-            <!-- iOS Notification 4: Spare Part Inventory Alarm -->
-            <div class="ios-notification ios-notif-delay-4 p-3.5 sm:p-4 flex items-start gap-3.5 text-left">
-              <div class="ios-app-icon shrink-0">
-                <img src="assets/images/favicon.png" alt="Taneet App Icon" class="w-6 h-6 object-contain">
+            <!-- Slot 3 (3rd in final stack — Arrives 2nd at 2.5s, pushes 1st notification down) -->
+            <div class="ios-notif-slot" data-appear-delay="2500">
+              <div class="ios-notif-slot-inner">
+                <div class="ios-notification p-3.5 sm:p-4 flex items-start gap-3.5 text-left">
+                  <div class="ios-app-icon shrink-0">
+                    <img src="assets/images/favicon.png" alt="Taneet App Icon" class="w-6 h-6 object-contain">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between gap-2 mb-1">
+                      <img src="assets/images/taneet-logo.png" alt="TANEET" class="h-3 w-auto object-contain">
+                      <span class="text-[11px] font-medium text-slate-400 shrink-0">6m ago</span>
+                    </div>
+                    <div class="text-xs sm:text-[13px] font-bold text-slate-900 leading-snug">
+                      Digital Ship Log Book Sign-Off
+                    </div>
+                    <p class="text-[11px] sm:text-xs text-slate-600 leading-snug mt-0.5">
+                      Daily Deck &amp; Engine Room log entries awaiting Master’s signature before port arrival.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div class="flex-1 min-w-0">
-                <div class="flex items-center justify-between gap-2 mb-1">
-                  <img src="assets/images/taneet-logo.png" alt="TANEET" class="h-3 w-auto object-contain">
-                  <span class="text-[11px] font-medium text-slate-400 shrink-0">12m ago</span>
+            </div>
+
+            <!-- Slot 4 (Bottom of final stack — Arrives 1st at 1.0s at the top, then gets pushed down) -->
+            <div class="ios-notif-slot" data-appear-delay="1000">
+              <div class="ios-notif-slot-inner">
+                <div class="ios-notification p-3.5 sm:p-4 flex items-start gap-3.5 text-left">
+                  <div class="ios-app-icon shrink-0">
+                    <img src="assets/images/favicon.png" alt="Taneet App Icon" class="w-6 h-6 object-contain">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between gap-2 mb-1">
+                      <img src="assets/images/taneet-logo.png" alt="TANEET" class="h-3 w-auto object-contain">
+                      <span class="text-[11px] font-medium text-slate-400 shrink-0">12m ago</span>
+                    </div>
+                    <div class="text-xs sm:text-[13px] font-bold text-slate-900 leading-snug">
+                      Spare Part Low Stock Alarm
+                    </div>
+                    <p class="text-[11px] sm:text-xs text-slate-600 leading-snug mt-0.5">
+                      Main Engine Fuel Injector <span class="font-semibold text-slate-800">(#ME-402 &bull; Store Room B)</span> dropped below minimum stock.
+                    </p>
+                  </div>
                 </div>
-                <div class="text-xs sm:text-[13px] font-bold text-slate-900 leading-snug">
-                  Spare Part Low Stock Alarm
-                </div>
-                <p class="text-[11px] sm:text-xs text-slate-600 leading-snug mt-0.5">
-                  Main Engine Fuel Injector <span class="font-semibold text-slate-800">(#ME-402 &bull; Store Room B)</span> dropped below minimum stock.
-                </p>
               </div>
             </div>
 

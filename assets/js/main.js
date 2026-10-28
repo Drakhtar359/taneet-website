@@ -9,30 +9,38 @@ document.addEventListener('DOMContentLoaded', () => {
     window.lucide.createIcons();
   }
 
-  // --- Hero iPhone Notifications Loop (1s, 2.5s, 4s, 5.5s -> Dismiss after 20s -> Restart) ---
-  const heroNotifications = document.querySelectorAll('.ios-notification');
-  if (heroNotifications.length > 0) {
-    const runNotificationLoop = () => {
+  // --- Hero iPhone Notifications Top-to-Bottom Push Loop (1s, 2.5s, 4s, 5.5s -> Dismiss after 20s -> Restart) ---
+  const notifSlots = document.querySelectorAll('.ios-notif-slot');
+  if (notifSlots.length > 0) {
+    const startNotificationCycle = () => {
+      // Schedule each notification to appear at the top (1000ms, 2500ms, 4000ms, 5500ms) and push older ones down
+      notifSlots.forEach(slot => {
+        const delay = parseInt(slot.getAttribute('data-appear-delay') || '1000', 10);
+        setTimeout(() => {
+          slot.classList.remove('is-exiting');
+          slot.classList.add('is-visible');
+        }, delay);
+      });
+
+      // After 20 seconds, smoothly fade out and reset the stack, then restart the loop
       setTimeout(() => {
-        // Smoothly fade out all notifications after 20 seconds
-        heroNotifications.forEach(notif => {
-          notif.classList.add('ios-notif-exit');
+        notifSlots.forEach(slot => {
+          slot.classList.add('is-exiting');
         });
 
-        // Once fade-out completes, reset and restart the 1s, 2.5s, 4s, 5.5s sequence
         setTimeout(() => {
-          heroNotifications.forEach(notif => {
-            notif.classList.remove('ios-notif-exit');
-            notif.style.animation = 'none';
-            void notif.offsetWidth; // Force reflow to restart CSS keyframe & delays
-            notif.style.animation = '';
+          notifSlots.forEach(slot => {
+            slot.style.transition = 'none';
+            slot.classList.remove('is-visible', 'is-exiting');
+            void slot.offsetWidth;
+            slot.style.transition = '';
           });
-          runNotificationLoop();
-        }, 850);
+          startNotificationCycle();
+        }, 800);
       }, 20000);
     };
 
-    runNotificationLoop();
+    startNotificationCycle();
   }
 
   // --- Mobile Navigation Menu ---
