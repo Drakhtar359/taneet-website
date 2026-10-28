@@ -542,29 +542,6 @@ input[type=range]:focus {
 /* ==========================================================================
    iPhone / iOS Push Notifications (Top-to-Bottom Push Stack)
    ========================================================================== */
-.ios-notif-slot {
-  display: grid;
-  grid-template-rows: 0fr;
-  margin-bottom: 0;
-  transition:
-    grid-template-rows 0.95s cubic-bezier(0.16, 1, 0.3, 1),
-    margin-bottom 0.95s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: grid-template-rows, margin-bottom;
-}
-
-.ios-notif-slot.is-visible {
-  grid-template-rows: 1fr;
-  margin-bottom: 0.875rem;
-}
-
-.ios-notif-slot:last-child.is-visible {
-  margin-bottom: 0;
-}
-
-.ios-notif-slot-inner {
-  overflow: hidden;
-}
-
 .ios-notification {
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(24px) saturate(180%);
@@ -577,24 +554,11 @@ input[type=range]:focus {
     0 14px 32px -6px rgba(15, 23, 42, 0.22),
     0 2px 6px -1px rgba(15, 23, 42, 0.08);
   opacity: 0;
-  transform: translate3d(0, -24px, 0) scale(0.95);
+  transform: translate3d(0, -28px, 0) scale(0.95);
   transition:
-    opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 1.25s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.25s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
-}
-
-.ios-notif-slot.is-visible .ios-notification {
-  opacity: 1;
-  transform: translate3d(0, 0, 0) scale(1);
-}
-
-.ios-notif-slot.is-exiting .ios-notification {
-  opacity: 0;
-  transform: translate3d(0, 16px, 0) scale(0.96);
-  transition:
-    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .ios-app-icon {

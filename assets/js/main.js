@@ -10,33 +10,67 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Hero iPhone Notifications Top-to-Bottom Push Loop (1s, 2.5s, 4s, 5.5s -> Dismiss after 20s -> Restart) ---
-  const notifSlots = document.querySelectorAll('.ios-notif-slot');
-  if (notifSlots.length > 0) {
+  const notifStack = document.getElementById('heroNotificationsStack');
+  if (notifStack) {
+    const cards = Array.from(notifStack.querySelectorAll('.ios-notification'));
+    // Arrival order from oldest to newest: cards[3] at 1s, cards[2] at 2.5s, cards[1] at 4s, cards[0] at 5.5s
+    const arrivalOrder = [3, 2, 1, 0];
+    const delays = [1000, 2500, 4000, 5500];
+    const timeLabels = ['now', '2m ago', '4m ago', '6m ago'];
+
+    const placeCardAtSlot = (cardIndex, slotIndex, visible) => {
+      const card = cards[cardIndex];
+      const targetSlotCard = cards[slotIndex];
+      if (!card || !targetSlotCard) return;
+
+      const deltaY = targetSlotCard.offsetTop - card.offsetTop;
+      const timeEl = card.querySelector('.ios-notif-time');
+      if (timeEl && timeLabels[slotIndex]) {
+        timeEl.textContent = timeLabels[slotIndex];
+      }
+
+      if (!visible) {
+        card.style.opacity = '0';
+        card.style.transform = `translate3d(0, ${deltaY - 28}px, 0) scale(0.95)`;
+      } else {
+        card.style.opacity = '1';
+        card.style.transform = `translate3d(0, ${deltaY}px, 0) scale(1)`;
+      }
+    };
+
+    const prepareInitialPositions = () => {
+      cards.forEach((card, idx) => {
+        card.style.transition = 'none';
+        placeCardAtSlot(idx, 0, false);
+        void card.offsetWidth;
+        card.style.transition = '';
+      });
+    };
+
     const startNotificationCycle = () => {
-      // Schedule each notification to appear at the top (1000ms, 2500ms, 4000ms, 5500ms) and push older ones down
-      notifSlots.forEach(slot => {
-        const delay = parseInt(slot.getAttribute('data-appear-delay') || '1000', 10);
+      prepareInitialPositions();
+
+      // Step through 1s, 2.5s, 4s, 5.5s: newest arrives at Slot 0 ('now'), pushing earlier ones down ('2m ago', '4m ago', '6m ago')
+      delays.forEach((delay, stepIdx) => {
         setTimeout(() => {
-          slot.classList.remove('is-exiting');
-          slot.classList.add('is-visible');
+          for (let k = 0; k <= stepIdx; k++) {
+            const cardIndex = arrivalOrder[k];
+            const currentSlot = stepIdx - k; // 0 for newest, 1 for previous, etc.
+            placeCardAtSlot(cardIndex, currentSlot, true);
+          }
         }, delay);
       });
 
-      // After 20 seconds, smoothly fade out and reset the stack, then restart the loop
+      // After 20 seconds, smoothly fade out and restart the loop
       setTimeout(() => {
-        notifSlots.forEach(slot => {
-          slot.classList.add('is-exiting');
+        cards.forEach((card, slotIdx) => {
+          card.style.opacity = '0';
+          card.style.transform = 'translate3d(0, 16px, 0) scale(0.96)';
         });
 
         setTimeout(() => {
-          notifSlots.forEach(slot => {
-            slot.style.transition = 'none';
-            slot.classList.remove('is-visible', 'is-exiting');
-            void slot.offsetWidth;
-            slot.style.transition = '';
-          });
           startNotificationCycle();
-        }, 800);
+        }, 1250);
       }, 20000);
     };
 
