@@ -663,13 +663,13 @@ input[type=range]:focus {
 
   /* Hero section mobile fit */
   main > section:first-of-type {
-    padding-top: 2rem !important;
-    padding-bottom: 4.75rem !important;
+    padding-top: 1.75rem !important;
+    padding-bottom: 2.75rem !important;
   }
 
   main > section:first-of-type h1 {
-    font-size: 1.85rem !important;
-    line-height: 1.2 !important;
+    font-size: 2rem !important;
+    line-height: 1.12 !important;
     word-break: break-word !important;
   }
 

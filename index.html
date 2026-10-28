@@ -127,77 +127,103 @@
 
   <main class="flex-grow">
     
-    <!-- HERO SECTION: ASYMMETRIC LEFT-ANCHORED EDITORIAL HERO -->
-    <section class="relative pt-20 pb-32 sm:pt-28 sm:pb-40 lg:pt-32 lg:pb-44 overflow-hidden bg-slate-950">
-      
-      <!-- Vivid Background Hero Photograph (Unobstructed Aerial Vessel View) -->
-      <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <img 
-          src="assets/images/hero-bg.jpg" 
-          alt="Commercial maritime cargo vessel sailing across the ocean - Taneet Maritime Fleet Management Platform" 
-          fetchpriority="high"
-          decoding="async"
-          class="w-full h-full object-cover object-center scale-100"
-        >
-        <!-- Asymmetric left-only contrast gradient: readable on the left, vivid & open photograph on the right -->
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/55 to-transparent"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-slate-950/20"></div>
-      </div>
-
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl text-left space-y-6">
+    <!-- HERO SECTION: MODERN ARCHITECTURAL EDITORIAL & BENTO SHOWCASE -->
+    <section class="relative pt-10 pb-16 sm:pt-14 sm:pb-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Top Asymmetric Editorial Split: Headline Left, Lead & Actions Right -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-end pb-10 sm:pb-12">
           
-          <!-- Minimal Overline Badge -->
-          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15">
-            <span class="w-2 h-2 rounded-full bg-[#28ada4] status-ping-teal"></span>
-            <span class="text-[11px] font-mono font-bold uppercase tracking-widest text-white/90">
-              Ship-to-Shore Fleet Operating System
-            </span>
+          <!-- Left: Bold Architectural Headline -->
+          <div class="lg:col-span-7">
+            <h1 class="text-4xl sm:text-6xl lg:text-[4rem] font-black tracking-tight text-slate-900 leading-[1.04]">
+              Maritime Fleet Control, <span class="text-[#28ada4]">Reimagined</span> for <span class="text-[#7b0b76]">Precision.</span>
+            </h1>
           </div>
 
-          <!-- Left-Aligned Editorial Headline (Zero Module Redundancy) -->
-          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.1]">
-            One Unified Workspace for <span class="text-[#28ada4]">Every Vessel</span> in Your Fleet.
-          </h1>
-
-          <!-- Concise High-Level Subheadline -->
-          <p class="text-base sm:text-lg text-slate-200 max-w-xl leading-relaxed border-l-2 border-[#7b0b76] pl-4 sm:pl-5">
-            Bridge the gap between shore management and onboard crews. Taneet replaces physical binders and fragmented spreadsheets with a single, audit-ready cloud platform built for modern maritime operations.
-          </p>
-
-          <!-- Left-Aligned Action Buttons -->
-          <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
-            <a href="https://demo.taneet.net" target="_blank" rel="noopener noreferrer" class="px-7 py-4 continuous-corners-md font-bold text-sm btn-primary-teal flex items-center justify-center gap-2.5 shadow-lg">
-              <i data-lucide="play-circle" class="w-4 h-4"></i>
-              Try Live Demo
-            </a>
-            
-            <a href="#modules" class="px-7 py-4 continuous-corners-md font-semibold text-sm text-white bg-white/10 border border-white/25 hover:border-[#28ada4] hover:bg-white/15 backdrop-blur-md transition-all flex items-center justify-center gap-2.5">
-              <i data-lucide="arrow-down-right" class="w-4 h-4 text-[#28ada4]"></i>
-              Discover Platform
-            </a>
+          <!-- Right: Concise Editorial Lead & Action Bar -->
+          <div class="lg:col-span-5 space-y-6 lg:pb-1">
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+              Replace physical ship binders, scattered spreadsheets, and inbox chaos with one structured, audit-ready cloud workspace built for modern vessel operators.
+            </p>
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <a href="https://demo.taneet.net" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 continuous-corners-md font-bold text-sm btn-primary-teal flex items-center justify-center gap-2 shadow-sm">
+                <i data-lucide="play-circle" class="w-4 h-4"></i>
+                Launch Live Demo
+              </a>
+              <a href="#modules" class="px-6 py-3.5 continuous-corners-md font-semibold text-sm text-slate-700 bg-slate-50 border border-slate-200 hover:border-[#28ada4] hover:text-[#28ada4] transition-colors flex items-center justify-center gap-2">
+                Explore Platform
+                <i data-lucide="arrow-down" class="w-4 h-4 text-[#28ada4]"></i>
+              </a>
+            </div>
           </div>
 
         </div>
-      </div>
 
-      <!-- Animated Multi-Layered Maritime Wave Divider -->
-      <div class="wave-animation-wrapper">
-        <svg class="waves-animated-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-          <defs>
-            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-          </defs>
-          <g class="wave-parallax">
-            <!-- Back Wave: subtle sea teal tint matching Taneet palette #28ada4 -->
-            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(40, 173, 164, 0.22)" />
-            <!-- Middle Wave: soft translucent foam -->
-            <use xlink:href="#gentle-wave" x="48" y="2" fill="rgba(255, 255, 255, 0.45)" />
-            <!-- Third Wave: bright white crest -->
-            <use xlink:href="#gentle-wave" x="48" y="4" fill="rgba(255, 255, 255, 0.8)" />
-            <!-- Front Wave: solid pure white sealing into the modules section -->
-            <use xlink:href="#gentle-wave" x="48" y="6" fill="#ffffff" />
-          </g>
-        </svg>
+        <!-- Bottom Asymmetric Bento Visual Grid (Continuous Squircle Corners) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5">
+          
+          <!-- Primary Aerial Vessel Visual Frame (8 Cols) -->
+          <div class="lg:col-span-8 relative h-[300px] sm:h-[420px] continuous-corners-lg overflow-hidden bg-slate-900 shadow-md">
+            <img 
+              src="assets/images/hero-bg.jpg" 
+              alt="Commercial maritime cargo vessel sailing across the ocean - Taneet Maritime Fleet Management Platform" 
+              fetchpriority="high"
+              decoding="async"
+              class="w-full h-full object-cover object-center"
+            >
+            <!-- Subtle bottom-left floating glass pill inside the photograph frame -->
+            <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto inline-flex items-center gap-3 px-4 py-2.5 continuous-corners-md bg-slate-950/75 backdrop-blur-md border border-white/15 text-white">
+              <span class="w-2 h-2 rounded-full bg-[#28ada4] status-ping-teal shrink-0"></span>
+              <span class="text-xs font-medium tracking-wide">
+                Designed for Shore Superintendents, Fleet Managers &amp; Vessel Masters
+              </span>
+            </div>
+          </div>
+
+          <!-- Right Stacked Architectural Cards (4 Cols) -->
+          <div class="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 sm:gap-5">
+            
+            <!-- Top Bento Card: 100% Paperless & Audit-Ready -->
+            <div class="continuous-corners-lg bg-slate-900 text-white p-6 sm:p-7 flex flex-col justify-between min-h-[195px] relative overflow-hidden">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#28ada4]">Zero Clutter</span>
+                <div class="w-9 h-9 continuous-corners-sm bg-white/10 flex items-center justify-center text-[#28ada4]">
+                  <i data-lucide="shield-check" class="w-4 h-4"></i>
+                </div>
+              </div>
+              <div class="mt-6">
+                <div class="text-2xl sm:text-3xl font-black tracking-tight text-white">
+                  100% Audit-Ready
+                </div>
+                <p class="mt-1.5 text-xs text-slate-300 leading-relaxed">
+                  Every fleet record organized, encrypted, and instantly accessible for Port State Control and class inspections.
+                </p>
+              </div>
+            </div>
+
+            <!-- Bottom Bento Card: Interactive Sandbox CTA -->
+            <a href="https://demo.taneet.net" target="_blank" rel="noopener noreferrer" class="continuous-corners-lg bg-[#e6f7f6] border border-[#28ada4]/30 p-6 sm:p-7 flex flex-col justify-between min-h-[195px] transition-colors hover:bg-[#d8f3f1]">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#7b0b76]">Interactive Sandbox</span>
+                <div class="w-9 h-9 continuous-corners-sm bg-[#28ada4] text-white flex items-center justify-center shadow-sm">
+                  <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                </div>
+              </div>
+              <div class="mt-6">
+                <div class="text-xl sm:text-2xl font-black tracking-tight text-slate-900">
+                  Test Drive Taneet Live
+                </div>
+                <p class="mt-1.5 text-xs text-slate-600 leading-relaxed">
+                  Explore a pre-loaded vessel environment in your browser at <span class="font-bold text-[#1e8f87] underline underline-offset-2">demo.taneet.net</span>
+                </p>
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+
       </div>
     </section>
 
