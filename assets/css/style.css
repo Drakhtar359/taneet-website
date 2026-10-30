@@ -632,9 +632,8 @@ input[type=range]:focus {
   #features .card-clean .icon-anim-lock,
   #features .card-clean .icon-anim-users,
   #features .card-clean .icon-anim-bell {
-    background-color: #e6f7f6 !important;
-    color: #28ada4 !important;
-    border-color: rgba(40, 173, 164, 0.3) !important;
+    background-color: transparent !important;
+    color: rgba(40, 173, 164, 0.15) !important;
     box-shadow: none !important;
     transform: none !important;
   }
@@ -642,9 +641,8 @@ input[type=range]:focus {
   #features .card-clean .icon-anim-globe,
   #features .card-clean .icon-anim-dashboard,
   #features .card-clean .icon-anim-shield {
-    background-color: #fdf2fc !important;
-    color: #7b0b76 !important;
-    border-color: rgba(123, 11, 118, 0.3) !important;
+    background-color: transparent !important;
+    color: rgba(123, 11, 118, 0.15) !important;
     box-shadow: none !important;
     transform: none !important;
   }
