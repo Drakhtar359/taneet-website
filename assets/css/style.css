@@ -642,7 +642,7 @@ input[type=range]:focus {
   #features .card-clean .icon-anim-dashboard,
   #features .card-clean .icon-anim-shield {
     background-color: transparent !important;
-    color: #f1e4f0 !important;
+    color: #f6eef5 !important;
     box-shadow: none !important;
     transform: none !important;
   }
