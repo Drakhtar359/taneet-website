@@ -633,7 +633,7 @@ input[type=range]:focus {
   #features .card-clean .icon-anim-users,
   #features .card-clean .icon-anim-bell {
     background-color: transparent !important;
-    color: #ddf2f0 !important;
+    color: #eff9f8 !important;
     box-shadow: none !important;
     transform: none !important;
   }
@@ -642,7 +642,7 @@ input[type=range]:focus {
   #features .card-clean .icon-anim-dashboard,
   #features .card-clean .icon-anim-shield {
     background-color: transparent !important;
-    color: #ebdaea !important;
+    color: #f6eef5 !important;
     box-shadow: none !important;
     transform: none !important;
   }
