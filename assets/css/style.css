@@ -988,24 +988,47 @@ input[type=range]:focus {
   }
 }
 
-/* Subtle Inner Dashed Compass Ring */
-.founders-inner-ring {
+/* Concentric Dotted Radar Range Rings inside the Big Circle */
+.founders-radar-ring {
   position: absolute;
-  inset: 28px;
   border-radius: 50%;
-  border: 1px dashed rgba(40, 173, 164, 0.28);
+  border: 1.5px dashed rgba(40, 173, 164, 0.32);
   pointer-events: none;
 }
 
-@media (max-width: 639px) {
-  .founders-inner-ring {
-    inset: 20px;
-  }
+/* Ring 1 sits right at the inner border edge of the 3 founder picture circles */
+.founders-radar-ring-1 {
+  inset: calc(var(--founder-radius) - 2.5px);
+}
+
+.founders-radar-ring-2 {
+  inset: calc(var(--pulse-radius) * 0.46);
+}
+
+.founders-radar-ring-3 {
+  inset: calc(var(--pulse-radius) * 0.68);
+}
+
+.founders-radar-ring-4 {
+  inset: calc(var(--pulse-radius) * 0.86);
+}
+
+.founders-radar-center-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(40, 173, 164, 0.55);
+  box-shadow: 0 0 8px rgba(40, 173, 164, 0.45);
+  pointer-events: none;
 }
 
 /* Rotating Rotor inside the Pulsing Circle:
-   Places the Taneet Chevron near the inner circumference with its pointy head
-   facing radially OUTWARDS toward the circle edge from the inside */
+   Pulled toward the center so the pointy tip of the Taneet logo exactly meets
+   the inner border of each founder's picture circle */
 .founders-logo-rotor {
   position: absolute;
   inset: 0;
@@ -1017,20 +1040,20 @@ input[type=range]:focus {
 
 .founders-edge-logo {
   position: absolute;
-  top: 6px;
+  top: calc(var(--founder-radius) - 3px);
   left: 50%;
   transform: translateX(-50%);
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
   filter: drop-shadow(0 2px 6px rgba(40, 173, 164, 0.35));
 }
 
 @media (max-width: 639px) {
   .founders-edge-logo {
-    top: 4px;
-    width: 28px;
-    height: 28px;
+    top: calc(var(--founder-radius) - 3px);
+    width: 26px;
+    height: 26px;
   }
 }
 
@@ -1049,10 +1072,8 @@ input[type=range]:focus {
   height: 100%;
   border-radius: 50%;
   background: #fdf2fc;
-  border: 2.5px solid #7b0b76;
-  box-shadow:
-    0 8px 20px -4px rgba(123, 11, 118, 0.22),
-    0 0 0 4px rgba(255, 255, 255, 0.9);
+  border: 2.5px solid #28ada4;
+  box-shadow: 0 8px 20px -4px rgba(40, 173, 164, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1062,9 +1083,7 @@ input[type=range]:focus {
 }
 
 .founder-node:hover .founder-pic-circle {
-  box-shadow:
-    0 12px 26px -4px rgba(123, 11, 118, 0.32),
-    0 0 0 5px rgba(253, 242, 252, 0.95);
+  box-shadow: 0 12px 26px -4px rgba(40, 173, 164, 0.35);
 }
 
 .founder-label {
