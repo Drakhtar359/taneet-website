@@ -913,4 +913,171 @@ input[type=range]:focus {
   }
 }
 
+/* ==========================================================================
+   About Us — 3 Founders Pulsing Circle (120° Apart) & Inner-Edge Taneet Rotor
+   ========================================================================== */
+.founders-orbit-stage {
+  --pulse-radius: 140px;
+  --founder-radius: 64px;
+  --founder-distance: calc(var(--pulse-radius) + var(--founder-radius));
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  height: 520px;
+  margin: 0 auto;
+  user-select: none;
+}
+
+@media (max-width: 639px) {
+  .founders-orbit-stage {
+    --pulse-radius: 90px;
+    --founder-radius: 44px;
+    --founder-distance: calc(var(--pulse-radius) + var(--founder-radius));
+    height: 360px;
+    max-width: 340px;
+  }
+}
+
+/* Central Pulsing Circle positioned so the 0° / 120° / 240° triangle is balanced */
+.founders-pulsing-circle {
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  width: calc(var(--pulse-radius) * 2);
+  height: calc(var(--pulse-radius) * 2);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #ffffff 0%, #f4fbfb 72%, #e6f7f6 100%);
+  border: 2.5px solid rgba(40, 173, 164, 0.55);
+  box-shadow:
+    0 12px 36px -6px rgba(40, 173, 164, 0.22),
+    inset 0 0 28px rgba(40, 173, 164, 0.12);
+}
+
+/* Expanding Pulsing Rings around the Main Circle */
+.founders-pulse-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(40, 173, 164, 0.5);
+  animation: founders-circle-pulse 3.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  pointer-events: none;
+}
+
+.founders-pulse-ring-delayed {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(123, 11, 118, 0.32);
+  animation: founders-circle-pulse 3.2s cubic-bezier(0.215, 0.61, 0.355, 1) 1.6s infinite;
+  pointer-events: none;
+}
+
+@keyframes founders-circle-pulse {
+  0% {
+    transform: scale(0.98);
+    opacity: 0.85;
+  }
+  75% {
+    transform: scale(1.16);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.16);
+    opacity: 0;
+  }
+}
+
+/* Subtle Inner Dashed Compass Ring */
+.founders-inner-ring {
+  position: absolute;
+  inset: 28px;
+  border-radius: 50%;
+  border: 1px dashed rgba(40, 173, 164, 0.28);
+  pointer-events: none;
+}
+
+@media (max-width: 639px) {
+  .founders-inner-ring {
+    inset: 20px;
+  }
+}
+
+/* Rotating Rotor inside the Pulsing Circle:
+   Places the Taneet Chevron near the inner circumference with its pointy head
+   facing radially OUTWARDS toward the circle edge from the inside */
+.founders-logo-rotor {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  animation: radar-heading-rotate 10s linear infinite;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.founders-edge-logo {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(40, 173, 164, 0.35));
+}
+
+@media (max-width: 639px) {
+  .founders-edge-logo {
+    top: 4px;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* 3 Founder Circles placed 120° apart (0°, 120°, 240°) on the Pulsing Circle Edge */
+.founder-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(var(--founder-radius) * 2);
+  height: calc(var(--founder-radius) * 2);
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2.5px solid #28ada4;
+  box-shadow:
+    0 10px 25px -5px rgba(15, 23, 42, 0.12),
+    0 0 0 4px rgba(40, 173, 164, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem;
+  z-index: 10;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.founder-node:hover {
+  border-color: #7b0b76;
+  box-shadow:
+    0 14px 30px -5px rgba(123, 11, 118, 0.2),
+    0 0 0 5px rgba(123, 11, 118, 0.12);
+}
+
+/* 0° — Top (12 o'clock) */
+.founder-node-0 {
+  transform: translate(-50%, -50%) translateY(calc(-1 * var(--founder-distance)));
+}
+
+/* 120° — Bottom-Right (4 o'clock) */
+.founder-node-120 {
+  transform: translate(-50%, -50%) rotate(120deg) translateY(calc(-1 * var(--founder-distance))) rotate(-120deg);
+}
+
+/* 240° — Bottom-Left (8 o'clock) */
+.founder-node-240 {
+  transform: translate(-50%, -50%) rotate(240deg) translateY(calc(-1 * var(--founder-distance))) rotate(-240deg);
+}
+
+
 

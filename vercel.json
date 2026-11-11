@@ -11,6 +11,10 @@
     {
       "source": "/privacy",
       "destination": "/privacy.html"
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about-us.html"
     }
   ]
 }
