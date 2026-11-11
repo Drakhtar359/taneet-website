@@ -917,23 +917,23 @@ input[type=range]:focus {
    About Us — 3 Founders Pulsing Circle (120° Apart) & Inner-Edge Taneet Rotor
    ========================================================================== */
 .founders-orbit-stage {
-  --pulse-radius: 140px;
-  --founder-radius: 64px;
-  --founder-distance: calc(var(--pulse-radius) + var(--founder-radius));
+  --pulse-radius: 150px;
+  --founder-radius: 36px;
+  --founder-distance: var(--pulse-radius);
   position: relative;
   width: 100%;
   max-width: 560px;
-  height: 520px;
+  height: 460px;
   margin: 0 auto;
   user-select: none;
 }
 
 @media (max-width: 639px) {
   .founders-orbit-stage {
-    --pulse-radius: 90px;
-    --founder-radius: 44px;
-    --founder-distance: calc(var(--pulse-radius) + var(--founder-radius));
-    height: 360px;
+    --pulse-radius: 100px;
+    --founder-radius: 28px;
+    --founder-distance: var(--pulse-radius);
+    height: 330px;
     max-width: 340px;
   }
 }
@@ -941,7 +941,7 @@ input[type=range]:focus {
 /* Central Pulsing Circle positioned so the 0° / 120° / 240° triangle is balanced */
 .founders-pulsing-circle {
   position: absolute;
-  top: 57%;
+  top: 54%;
   left: 50%;
   width: calc(var(--pulse-radius) * 2);
   height: calc(var(--pulse-radius) * 2);
@@ -1034,34 +1034,57 @@ input[type=range]:focus {
   }
 }
 
-/* 3 Founder Circles placed 120° apart (0°, 120°, 240°) on the Pulsing Circle Edge */
+/* 3 Founder Picture Circles centered directly on the Pulsing Circle circumference (0°, 120°, 240°) */
 .founder-node {
   position: absolute;
   top: 50%;
   left: 50%;
   width: calc(var(--founder-radius) * 2);
   height: calc(var(--founder-radius) * 2);
+  z-index: 10;
+}
+
+.founder-pic-circle {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  background: #ffffff;
-  border: 2.5px solid #28ada4;
+  background: #fdf2fc;
+  border: 2.5px solid #7b0b76;
   box-shadow:
-    0 10px 25px -5px rgba(15, 23, 42, 0.12),
-    0 0 0 4px rgba(40, 173, 164, 0.12);
+    0 8px 20px -4px rgba(123, 11, 118, 0.22),
+    0 0 0 4px rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7b0b76;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.founder-node:hover .founder-pic-circle {
+  box-shadow:
+    0 12px 26px -4px rgba(123, 11, 118, 0.32),
+    0 0 0 5px rgba(253, 242, 252, 0.95);
+}
+
+.founder-label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  padding: 0.5rem;
-  z-index: 10;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  color: #7b0b76;
 }
 
-.founder-node:hover {
-  border-color: #7b0b76;
-  box-shadow:
-    0 14px 30px -5px rgba(123, 11, 118, 0.2),
-    0 0 0 5px rgba(123, 11, 118, 0.12);
+.founder-label-top {
+  bottom: calc(100% + 10px);
+}
+
+.founder-label-bottom {
+  top: calc(100% + 10px);
 }
 
 /* 0° — Top (12 o'clock) */
