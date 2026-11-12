@@ -923,7 +923,7 @@ input[type=range]:focus {
   position: relative;
   width: 100%;
   max-width: 560px;
-  height: 460px;
+  height: 490px;
   margin: 0 auto;
   user-select: none;
 }
@@ -933,7 +933,7 @@ input[type=range]:focus {
     --pulse-radius: 100px;
     --founder-radius: 28px;
     --founder-distance: var(--pulse-radius);
-    height: 330px;
+    height: 360px;
     max-width: 340px;
   }
 }
@@ -1090,12 +1090,18 @@ input[type=range]:focus {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  white-space: nowrap;
+  width: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   color: #7b0b76;
+}
+
+@media (max-width: 639px) {
+  .founder-label {
+    width: 144px;
+  }
 }
 
 .founder-label-top {
